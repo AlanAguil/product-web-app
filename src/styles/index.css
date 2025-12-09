@@ -1,0 +1,9 @@
+@import './bootstrap.css';
+
+/* Base styles placeholder for global overrides */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+

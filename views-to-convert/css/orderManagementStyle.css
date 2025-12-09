@@ -1,0 +1,114 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-brand span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.order-card {
+    border: 2px solid #FFA500; /* Borde naranja claro */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px; /* Espaciado entre elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease;
+}
+
+.order-card:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #FFFFFF;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.list-group-item p {
+    margin: 0;
+}
+
+.input-group-append .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group-append .btn img {
+    height: 20px;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: #dee2e6 #dee2e6 #f8f9fa;
+    background-color: #f8f9fa;
+}
+
+.btn-success, .btn-danger, .btn-outline-primary {
+    margin-right: 10px;
+}
+.order-card {
+    border: 1px solid #FFCC99;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #FFF8E1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s;
+}
+.order-card:hover {
+    transform: scale(1.02);
+}
+.order-card p {
+    margin: 0;
+}
+.order-card .btn {
+    margin: 5px 0;
+}
+.btn-accept {
+    background-color: #E0F7FA;
+    border: 1px solid #00ACC1;
+    color: #00ACC1;
+}
+.btn-reject {
+    background-color: #FFEBEE;
+    border: 1px solid #D32F2F;
+    color: #D32F2F;
+}
+.btn-primary {
+    background-color: #B2EBF2;
+    border: 1px solid #00ACC1;
+    color: #00ACC1;
+}
+
+
+

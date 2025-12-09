@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Producto - Manos Mexicanas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/productViewStyle.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand d-flex align-items-center" href="indexAdmin.html">
+            <img src="img/logo_Manos_Mexicanas-removebg-preview.png" alt="Manos Mexicanas" style="height: 50px;">
+            <span class="ml-2">Manos Mexicanas</span>
+        </a>
+    </nav>
+            <h2 class="text-center flex-grow-1">Visualizar Producto</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <img src="img/producto1.jpg" class="img-fluid product-image" alt="Producto 1">
+                <div class="product-details mt-4">
+                    <h3>Nombre del Producto</h3>
+                    <p><strong>Descripción:</strong> Descripción detallada del producto.</p>
+                    <p><strong>Precio:</strong> $100.00</p>
+                    <p><strong>Categoría:</strong> Artesanías</p>
+                    <p><strong>Disponibilidad:</strong> En stock</p>
+                </div>
+                <div class="mt-4">
+                    <a href="modificarProducto.html" class="btn btn-warning mr-2">Modificar Producto</a>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">Eliminar Producto</button>
+                    <a href="registrarProducto.html" class="btn btn-success">Registrar Producto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de confirmación de eliminación -->
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro de que desea eliminar este producto?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteProduct()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            $('#deleteConfirmationModal').modal('show');
+        }
+
+        function deleteProduct() {
+            $('#deleteConfirmationModal').modal('hide');
+            alert("Producto eliminado con éxito.");
+            // Aquí iría el código para eliminar el producto
+        }
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
