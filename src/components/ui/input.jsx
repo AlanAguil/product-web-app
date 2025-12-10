@@ -1,6 +1,17 @@
+const Input = ({ type = 'text', className = '', ...props }) => {
+  return (
+    <input
+      type={type}
+      className={`mm-input ${className}`.trim()}
+      {...props}
+    />
+  );
+};
+
+export default Input;
 import * as React from "react"
 
-import { cn } from "@/utils/tailwind-utils"
+import { cn } from "@/utils/tailwind.utils"
 
 const Input = React.forwardRef(({ className, type, ...props }, ref) => {
   return (

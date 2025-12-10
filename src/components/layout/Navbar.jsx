@@ -43,7 +43,7 @@ const Navbar = () => {
               <>
                 <Link to="/login">
                   <Button variant="outline" size="small">
-                    Iniciar Sesión
+                    Iniciar sesión
                   </Button>
                 </Link>
                 <Link to="/register">

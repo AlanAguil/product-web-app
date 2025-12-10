@@ -75,7 +75,7 @@ const PublicNavbar = () => {
           </li>
           <li className="nav-item ml-3">
             <button className="btn btn-primary" type="button">
-              Iniciar Sesión
+              Iniciar sesión
             </button>
           </li>
           <li className="nav-item ml-3">

@@ -1,36 +1,155 @@
-import '../styles/Style3.css';
+import { useState } from 'react';
+import LoginForm from '../components/common/LoginForm';
+import RegisterForm from '../components/common/RegisterForm';
+import AuthLayout from '../components/layout/AuthLayout';
+import '../styles/pages/login.css';
+import { validateEmailFormat, validateFormRules, validateIsRequired, validateMinLength, validateMaxLength } from '../utils/general.functions';
+import { stringConstants } from '../utils/string.constants';
+
+const loginRules = {
+  email: [
+    { fn: validateIsRequired },
+    { fn: validateEmailFormat },
+    { fn: validateMaxLength, args: [256] }
+  ],
+  password: [
+    { fn: validateIsRequired },
+    { fn: validateMinLength, args: [8] },
+    { fn: validateMaxLength, args: [256] }
+  ]
+};
 
 const Login = () => {
+
+  const [isActive, setIsActive] = useState(false);
+
+  // Form states
+  const [loginForm, setLoginForm] = useState({
+    email: '',
+    password: ''
+  });
+
+  const [registerForm, setRegisterForm] = useState({
+    name: '',
+    phoneNumber: '',
+    email: '',
+    password: '',
+    passwordConfirm: ''
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleLoginChange = (e) => {
+    const { name, value } = e.target;
+    setLoginForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleRegisterChange = (e) => {
+    const { name, value } = e.target;
+    setRegisterForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const validateForm = () => {
+    const rulesResults = validateFormRules(loginForm, loginRules);
+    setErrors(rulesResults);
+    return Object.keys(rulesResults).length === 0;
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // Lógica de login se implementará después
+      console.log('Login form submitted:', loginForm);
+    }
+  };
+
+  const validateRegisterForm = () => {
+
+    const registerRules = {
+      name: [
+        { fn: validateIsRequired },
+        { fn: validateMinLength, args: [3] },
+        { fn: validateMaxLength, args: [256] }
+      ],
+      email: [
+        { fn: validateIsRequired },
+        { fn: validateEmailFormat },
+        { fn: validateMaxLength, args: [256] }
+      ],
+      phoneNumber: [
+        { fn: validateIsRequired },
+        { fn: validateMinLength, args: [10] },
+        { fn: validateMaxLength, args: [15] }
+      ],
+      password: [
+        { fn: validateIsRequired },
+        { fn: validateMinLength, args: [8] },
+        { fn: validateMaxLength, args: [256] }
+      ],
+      passwordConfirm: [
+        { fn: validateIsRequired },
+        { fn: validateMinLength, args: [8] },
+        { fn: validateMaxLength, args: [256] },
+        {
+          fn: (value, matchValue) => (value !== matchValue ? stringConstants.validation.passwordsMustMatch : null),
+          args: [registerForm.password]
+        }
+      ]
+    };
+
+    const rulesResults = validateFormRules(registerForm, registerRules);
+    setErrors(rulesResults);
+    return Object.keys(rulesResults).length === 0;
+  };
+
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateRegisterForm()) {
+      // Lógica de registro se implementará después
+      console.log('Register form submitted:', registerForm);
+    }
+  };
+
+  const toggleToRegister = () => {
+    setErrors({});
+    setIsActive(true);
+  };
+
+  const toggleToLogin = () => {
+    setErrors({});
+    setIsActive(false);
+  };
+
   return (
-    <div className="container login-container">
-      <div className="logo text-center">
-        <img src="/img/logo_Manos_Mexicanas-removebg-preview.png" alt="Manos Mexicanas Logo" />
-      </div>
-      <div className="login-form">
-        <h2>Inicia Sesión</h2>
-        <form id="login-form">
-          <div className="form-group">
-            <label htmlFor="Usuario">Nombre De Usuario</label>
-            <input type="text" className="form-control" id="Usuario" placeholder="Nombre De Usuario" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" className="form-control" id="password" placeholder="Contraseña" required />
-          </div>
-          <div className="form-group text-right">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
-          <button type="submit" className="btn-login btn-block">
-            Iniciar sesión
-          </button>
-          <div className="register-link">
-            ¿No tienes cuenta? <a href="#">Registrarse</a>
-          </div>
-        </form>
-      </div>
-    </div>
+    <>
+      <AuthLayout
+        isActive={isActive}
+        onToggleToLogin={toggleToLogin}
+        onToggleToRegister={toggleToRegister}
+      >
+        <RegisterForm
+          formData={registerForm}
+          onChange={handleRegisterChange}
+          onSubmit={handleRegisterSubmit}
+          errors={errors}
+        />
+        <LoginForm
+          formData={loginForm}
+          onChange={handleLoginChange}
+          onSubmit={handleLoginSubmit}
+          errors={errors}
+        />
+      </AuthLayout>
+    </>
   );
 };
 
 export default Login;
-
