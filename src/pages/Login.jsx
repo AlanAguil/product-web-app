@@ -2,7 +2,7 @@ import { useState } from 'react';
 import LoginForm from '../components/common/LoginForm';
 import RegisterForm from '../components/common/RegisterForm';
 import AuthLayout from '../components/layout/AuthLayout';
-import '../styles/pages/login.css';
+import '../styles/pages/Login.css';
 import { validateEmailFormat, validateFormRules, validateIsRequired, validateMinLength, validateMaxLength } from '../utils/general.functions';
 import { stringConstants } from '../utils/string.constants';
 
