@@ -1,63 +1,98 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
-import Button from '../common/Button';
-import '../../styles/Navbar.css';
+import React from 'react';
+import { stringConstants } from '@/utils/string.constants';
+import Button from '@/components/ui/Button';
+import '@/styles/layout/Navbar.css';
 
 const Navbar = () => {
-  const { user, logout, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+    // Categories List
+    const categories = [
+        "Peluches", "Ropa", "Juguetes", "Sombreros", "Joyeria", "Decoraciones", "Mascotas", "Ofertas"
+    ];
 
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
+    return (
+        <nav className="navbar">
+            <div className="navbar-container">
+                {/* Categories Dropdown Trigger (Hamburger/Menu) */}
+                <div className="dropdown-container">
+                    <div className="nav-link" role="button">
+                        <img 
+                          src="/img/menu.png" 
+                          alt="Categorías" 
+                          style={{ height: '30px' }}
+                          onError={(e) => {e.target.style.display='none'; e.target.parentElement.innerHTML = '☰';}}
+                        />
+                    </div>
+                    <div className="dropdown-menu">
+                        {categories.map((cat, index) => (
+                            <a key={index} className="dropdown-item" href="#">{cat}</a>
+                        ))}
+                    </div>
+                </div>
 
-  return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <span className="logo-icon">🚀</span>
-          <span className="logo-text">CitApp</span>
-        </Link>
+                {/* Brand Logo & Name */}
+                <a className="navbar-brand" href="/">
+                    <img 
+                      src="/img/logo_Manos_Mexicanas-removebg-preview.png" 
+                      alt="Logo" 
+                      className="navbar-logo"
+                      onError={(e) => {e.target.style.display='none';}} // Fallback logic
+                    />
+                    <span>{stringConstants.appName}</span>
+                </a>
 
-        <div className="navbar-menu">
-          <Link to="/" className="navbar-link">
-            Inicio
-          </Link>
-          
-          {isAuthenticated && (
-            <Link to="/dashboard" className="navbar-link">
-              Dashboard
-            </Link>
-          )}
+                {/* Search, Cart, User */}
+                <ul className="navbar-nav">
+                    <li>
+                        <form className="search-form" onSubmit={(e) => e.preventDefault()}>
+                            <input 
+                              className="search-input" 
+                              type="search" 
+                              placeholder="Buscar productos..." 
+                              aria-label="Search" 
+                            />
+                            <Button variant="outline-success" type="submit">
+                                <span role="img" aria-label="search">🔍</span>
+                            </Button>
+                        </form>
+                    </li>
+                    
+                    <li className="nav-item">
+                        <a className="nav-link" href="/cart">
+                             <img 
+                               src="/img/cart.png" 
+                               alt="Carrito" 
+                               className="nav-icon"
+                               style={{height: '30px'}}
+                               onError={(e) => {e.target.style.display='none'; e.target.parentElement.innerHTML='🛒';}}
+                             />
+                        </a>
+                    </li>
 
-          <div className="navbar-actions">
-            {isAuthenticated ? (
-              <div className="user-section">
-                <span className="user-name">Hola, {user?.name || 'Usuario'}</span>
-                <Button variant="outline" size="small" onClick={handleLogout}>
-                  Cerrar Sesión
-                </Button>
-              </div>
-            ) : (
-              <>
-                <Link to="/login">
-                  <Button variant="outline" size="small">
-                    Iniciar sesión
-                  </Button>
-                </Link>
-                <Link to="/register">
-                  <Button variant="primary" size="small">
-                    Registrarse
-                  </Button>
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
+                    <li className="nav-item">
+                       <Button 
+                         variant="primary" 
+                         onClick={() => window.location.href='/login'}
+                         style={{marginLeft: '0.5rem'}}
+                        >
+                           Iniciar Sesión
+                       </Button>
+                    </li>
+                    
+                    <li className="nav-item">
+                        <a className="nav-link" href="/profile">
+                             <img 
+                               src="/img/usuario.png" 
+                               alt="Perfil" 
+                               className="nav-icon"
+                               style={{height: '32px'}}
+                               onError={(e) => {e.target.style.display='none'; e.target.parentElement.innerHTML='👤';}}
+                             />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
 };
 
 export default Navbar;

@@ -1,5 +1,5 @@
 import AdminNavbar from '../../components/layout/AdminNavbar';
-import '../../styles/adminStyle.css';
+import '../../styles/pages/adminStyle.css';
 
 const adminOptions = [
   { icon: '/img/producto.png', label: 'Gestionar pedidos', href: '#' },

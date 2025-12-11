@@ -8,7 +8,9 @@ const AuthInput = ({
   placeholder,
   required = false,
   className = '',
-  error = null
+  error = null,
+  maxLength = null,
+  minLength = null,
 }) => {
   return (
     <div className="auth-input-wrapper" style={{ width: '100%' }}>
@@ -20,6 +22,8 @@ const AuthInput = ({
         placeholder={placeholder}
         required={required}
         className={`auth-input ${className} ${error ? 'input-error' : ''}`}
+        maxLength={maxLength}
+        minLength={minLength}
       />
       {error && <p className="error-message">{error}</p>}
     </div>

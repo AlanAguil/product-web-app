@@ -2,8 +2,16 @@ import { useState } from 'react';
 import LoginForm from '../components/common/LoginForm';
 import RegisterForm from '../components/common/RegisterForm';
 import AuthLayout from '../components/layout/AuthLayout';
+import Waves from '../components/layout/Waves';
 import '../styles/pages/Login.css';
-import { validateEmailFormat, validateFormRules, validateIsRequired, validateMinLength, validateMaxLength } from '../utils/general.functions';
+import {
+  handleNumericChange,
+  validateEmailFormat,
+  validateFormRules,
+  validateIsRequired,
+  validateMaxLength,
+  validateMinLength
+} from '../utils/general.functions';
 import { stringConstants } from '../utils/string.constants';
 
 const loginRules = {
@@ -14,10 +22,41 @@ const loginRules = {
   ],
   password: [
     { fn: validateIsRequired },
-    { fn: validateMinLength, args: [8] },
     { fn: validateMaxLength, args: [256] }
   ]
 };
+
+const registerRules = (password) => ({
+  name: [
+    { fn: validateIsRequired },
+    { fn: validateMinLength, args: [3] },
+    { fn: validateMaxLength, args: [256] }
+  ],
+  email: [
+    { fn: validateIsRequired },
+    { fn: validateEmailFormat },
+    { fn: validateMaxLength, args: [256] }
+  ],
+  phoneNumber: [
+    { fn: validateIsRequired },
+    { fn: validateMinLength, args: [10] },
+    { fn: validateMaxLength, args: [15] }
+  ],
+  password: [
+    { fn: validateIsRequired },
+    { fn: validateMinLength, args: [8] },
+    { fn: validateMaxLength, args: [256] }
+  ],
+  passwordConfirm: [
+    { fn: validateIsRequired },
+    { fn: validateMinLength, args: [8] },
+    { fn: validateMaxLength, args: [256] },
+    {
+      fn: (value, matchValue) => (value !== matchValue ? stringConstants.validation.passwordsMustMatch : null),
+      args: [password]
+    }
+  ]
+});
 
 const Login = () => {
 
@@ -39,6 +78,15 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
 
+  const handlePhoneChange = (e) => {
+    handleNumericChange(e, (event) => {
+      setRegisterForm(prev => ({
+        ...prev,
+        [event.target.name]: event.target.value
+      }));
+    });
+  };
+
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginForm(prev => ({
@@ -49,6 +97,12 @@ const Login = () => {
 
   const handleRegisterChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === 'phoneNumber') {
+      handlePhoneChange(e);
+      return;
+    }
+
     setRegisterForm(prev => ({
       ...prev,
       [name]: value
@@ -72,39 +126,7 @@ const Login = () => {
 
   const validateRegisterForm = () => {
 
-    const registerRules = {
-      name: [
-        { fn: validateIsRequired },
-        { fn: validateMinLength, args: [3] },
-        { fn: validateMaxLength, args: [256] }
-      ],
-      email: [
-        { fn: validateIsRequired },
-        { fn: validateEmailFormat },
-        { fn: validateMaxLength, args: [256] }
-      ],
-      phoneNumber: [
-        { fn: validateIsRequired },
-        { fn: validateMinLength, args: [10] },
-        { fn: validateMaxLength, args: [15] }
-      ],
-      password: [
-        { fn: validateIsRequired },
-        { fn: validateMinLength, args: [8] },
-        { fn: validateMaxLength, args: [256] }
-      ],
-      passwordConfirm: [
-        { fn: validateIsRequired },
-        { fn: validateMinLength, args: [8] },
-        { fn: validateMaxLength, args: [256] },
-        {
-          fn: (value, matchValue) => (value !== matchValue ? stringConstants.validation.passwordsMustMatch : null),
-          args: [registerForm.password]
-        }
-      ]
-    };
-
-    const rulesResults = validateFormRules(registerForm, registerRules);
+    const rulesResults = validateFormRules(registerForm, registerRules(registerForm.password));
     setErrors(rulesResults);
     return Object.keys(rulesResults).length === 0;
   };
@@ -130,6 +152,7 @@ const Login = () => {
 
   return (
     <>
+      <Waves />
       <AuthLayout
         isActive={isActive}
         onToggleToLogin={toggleToLogin}

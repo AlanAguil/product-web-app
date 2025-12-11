@@ -1,14 +1,9 @@
 import '../../styles/common/LoginForm.css';
 import AuthInput from '../ui/AuthInput';
 import AuthButton from '../ui/AuthButton';
-import { handleNumericChange } from '../../utils/general.functions';
 
 const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
   
-  const handlePhoneChange = (e) => {
-    handleNumericChange(e, onChange);
-  };
-
   return (
     <div className="form-container sign-up">
       <form onSubmit={onSubmit} noValidate>
@@ -21,6 +16,7 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           placeholder="Nombre"
           required
           error={errors.name}
+          maxLength={256}
         />
         <AuthInput
           type="email"
@@ -30,15 +26,17 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           placeholder="Email" 
           required
           error={errors.email}
+          maxLength={256}
         />
         <AuthInput
           type="tel"
           name="phoneNumber"
           value={formData.phoneNumber}
-          onChange={handlePhoneChange}
+          onChange={onChange}
           placeholder="Número de teléfono"
           required
           error={errors.phoneNumber}
+          maxLength={15}
         />
         <AuthInput
           type="password"
@@ -48,6 +46,7 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           placeholder="Contraseña"
           required
           error={errors.password}
+          maxLength={256}
         />
         <AuthInput
           type="password"
@@ -57,6 +56,7 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           placeholder="Repetir contraseña"
           required
           error={errors.passwordConfirm}
+          maxLength={256}
         />
         <AuthButton type="submit" variant="primary">
           Registrarse

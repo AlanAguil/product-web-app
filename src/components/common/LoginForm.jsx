@@ -15,6 +15,7 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           placeholder="Email"
           required
           error={errors.email}
+          maxLength={256}
         />
         <AuthInput
           type="password"
@@ -24,8 +25,10 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           placeholder="Contraseña"
           required
           error={errors.password}
+          maxLength={256}
         />
         <a href="#" id="contra">¿Olvidaste tu contraseña?</a>
+        <a href="#" id="return">Volver a la tienda</a>
         <AuthButton type="submit" variant="primary">
           Iniciar sesión
         </AuthButton>

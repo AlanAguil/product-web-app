@@ -1,30 +1,38 @@
-const Input = ({ type = 'text', className = '', ...props }) => {
+import '../../styles/Input.css';
+
+const Input = ({
+  label,
+  type = 'text',
+  name,
+  value,
+  onChange,
+  placeholder,
+  error,
+  required = false,
+  disabled = false,
+  className = ''
+}) => {
   return (
-    <input
-      type={type}
-      className={`mm-input ${className}`.trim()}
-      {...props}
-    />
+    <div className={`input-group ${className}`}>
+      {label && (
+        <label htmlFor={name} className="input-label">
+          {label} {required && <span className="required">*</span>}
+        </label>
+      )}
+      <input
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        required={required}
+        disabled={disabled}
+        className={`input-field ${error ? 'input-error' : ''}`}
+      />
+      {error && <span className="error-message">{error}</span>}
+    </div>
   );
 };
 
 export default Input;
-import * as React from "react"
-
-import { cn } from "@/utils/tailwind.utils"
-
-const Input = React.forwardRef(({ className, type, ...props }, ref) => {
-  return (
-    <input
-      type={type}
-      className={cn(
-        "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        className
-      )}
-      ref={ref}
-      {...props} />
-  );
-})
-Input.displayName = "Input"
-
-export { Input }
