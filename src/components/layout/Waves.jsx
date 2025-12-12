@@ -1,4 +1,4 @@
-import '../../styles/layout/Waves.css';
+import '../../styles/layout/waves.css';
 
 const Waves = () => { 
     return (
