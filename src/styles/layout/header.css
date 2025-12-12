@@ -1,0 +1,45 @@
+/* Estilo de la barra de navegación */
+.navbar {
+    padding: 1rem;
+    background-color: #001f4d;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono de libro dentro del logo */
+.book-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Estilos del contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en el logo */
+.logo-container:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Estilo del texto del logo */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-left: 10px;
+}
+

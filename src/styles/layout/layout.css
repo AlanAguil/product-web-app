@@ -1,0 +1,93 @@
+/* Contenedor principal de los formularios */
+.auth-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: calc(100vw - 40px);
+    min-height: 490px;
+    max-height: calc(100vh - 40px);
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilos para párrafos dentro del contenedor */
+.auth-container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Excluir mensajes de error de los estilos generales de párrafo */
+.auth-container .error-message {
+    margin: 0 !important;
+    margin-top: 2px !important;
+    margin-bottom: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+}
+
+/* Estilos para los elementos span dentro del contenedor */
+.auth-container span {
+    font-size: 12px;
+}
+
+/* Estilo para enlaces dentro del contenedor */
+.auth-container a {
+    color: #000000;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+    transition: color 0.3s ease;
+}
+
+.auth-container a:hover {
+    color: #218838;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .auth-container {
+        width: 100%;
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        margin: 10px;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        width: 100%;
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        margin: 10px;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        margin: 10px;
+        min-height: 450px;
+    }
+}
+
+/* Ajustes para zoom alto (140%+) */
+@media (min-resolution: 140dpi) {
+    .auth-container {
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        margin: 10px;
+    }
+}
+
