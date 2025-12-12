@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { authApi, userApi } from '../api';
+import { authApi } from '../api/services/auth';
+import { userApi } from '../api/services/user';
 
 const AuthContext = createContext(null);
 
@@ -147,12 +148,12 @@ export const AuthProvider = ({ children }) => {
     user,
     loading,
     error,
-    
+
     // Métodos de autenticación
     login,
     register,
     logout,
-    
+
     // Utilidades
     getCurrentUser,
     isAuthenticated: isAuthenticated(),
@@ -160,7 +161,7 @@ export const AuthProvider = ({ children }) => {
     hasRole,
     hasAnyRole,
     updateUser,
-    
+
     // Helpers
     clearError: () => setError(null),
   };

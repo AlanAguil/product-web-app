@@ -1,6 +1,7 @@
-import '../../styles/layout/AuthHeader.css';
+import { stringConstants } from '@/utils/string.constants';
+import '../../styles/layout/header.css';
 
-const AuthHeader = () => {
+const Header = () => {
   return (
     <header>
       <nav className="navbar">
@@ -18,12 +19,12 @@ const AuthHeader = () => {
               </g>
             </svg>
           </div>
-          <span className="logo-text">BIDI</span>
+          <span className="logo-text">{stringConstants.appName}</span>
         </div>
       </nav>
     </header>
   );
 };
 
-export default AuthHeader;
+export default Header;
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import LoginForm from '../components/common/LoginForm';
 import RegisterForm from '../components/common/RegisterForm';
-import AuthLayout from '../components/layout/AuthLayout';
+import AuthLayout from '../components/layout/Layout';
 import Waves from '../components/layout/Waves';
-import '../styles/pages/Login.css';
+import "@/styles/pages/login.css";
 import {
   handleNumericChange,
   validateEmailFormat,
@@ -151,7 +151,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className="body-container">
       <Waves />
       <AuthLayout
         isActive={isActive}
@@ -171,7 +171,7 @@ const Login = () => {
           errors={errors}
         />
       </AuthLayout>
-    </>
+    </div>
   );
 };
 

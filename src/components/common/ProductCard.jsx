@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '@/components/ui/Button';
-import '../../styles/common/ProductCard.css';
+import Button from '../ui/Button';
+import '../../styles/common/product.card.css';
  
 const ProductCard = ({ product }) => {
   const { title, description, price, image } = product;
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
         <p className="product-card-text">{description}</p>
         <p className="product-card-price">{formattedPrice}</p>
         <div className="product-card-footer">
-          <Button variant="primary" onClick={() => console.log(`Viewing ${title}`)}>
+          <Button variant="primary" className="product-card-btn" onClick={() => console.log(`Viewing ${title}`)}>
             Mostrar Artículo
           </Button>
         </div>

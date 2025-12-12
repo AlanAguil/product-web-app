@@ -1,13 +1,5 @@
-const categories = [
-  'Peluches',
-  'Ropa',
-  'Juguetes',
-  'Sombreros',
-  'Joyeria',
-  'Decoraciones',
-  'Mascotas',
-  'Ofertas',
-];
+import { categories } from '@/mocks/categories';
+import { stringConstants } from '@/utils/string.constants';
 
 const PublicNavbar = () => {
   return (
@@ -50,7 +42,7 @@ const PublicNavbar = () => {
           alt="Logo Manos Mexicanas"
           style={{ height: 50 }}
         />
-        <span className="ml-2">Manos Mexicanas</span>
+        <span className="ml-2">{stringConstants.appName}</span>
       </a>
 
       <div className="collapse navbar-collapse" id="publicNavbar">

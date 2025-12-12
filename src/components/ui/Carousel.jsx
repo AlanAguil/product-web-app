@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/ui/Carousel.css';
+import '../../styles/ui/carousel.css';
 
 /**
  * Custom Carousel Component

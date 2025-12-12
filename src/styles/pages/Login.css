@@ -10,7 +10,7 @@
 }
 
 /* Estilo para el cuerpo de la página */
-body {
+.body-container {
     background-color: #c9d6ff;
     background: radial-gradient(circle, rgba(2,0,36,1) -50%, rgb(9, 121, 78) 35%, rgba(0,212,255,1) 100%);
     display: flex;

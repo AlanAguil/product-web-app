@@ -1,19 +1,18 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import '../../styles/Layout.css';
+import '../../styles/layout/layout.css';
+import OverlayPanel from './OverlayPanel';
 
-const Layout = () => {
+const Layout = ({ isActive, onToggleToLogin, onToggleToRegister, children }) => {
   return (
-    <div className="layout">
-      <Navbar />
-      <main className="main-content">
-        <Outlet />
-      </main>
-      <footer className="footer">
-        <p>&copy; 2025 Manos Mexicanas. Todos los derechos reservados.</p>
-      </footer>
+    <div className={`auth-container ${isActive ? 'active' : ''}`}>
+      {children}
+      <OverlayPanel
+        isActive={isActive}
+        onToggleToLogin={onToggleToLogin}
+        onToggleToRegister={onToggleToRegister}
+      />
     </div>
   );
 };
 
 export default Layout;
+

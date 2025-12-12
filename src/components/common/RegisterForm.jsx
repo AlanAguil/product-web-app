@@ -1,14 +1,14 @@
-import '../../styles/common/LoginForm.css';
-import AuthInput from '../ui/AuthInput';
-import AuthButton from '../ui/AuthButton';
+import '../../styles/common/login.form.css';
+import Input from '../ui/Input';
+import Button from '../ui/Button';
 
 const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
-  
+
   return (
     <div className="form-container sign-up">
       <form onSubmit={onSubmit} noValidate>
         <h1>Crear cuenta</h1>
-        <AuthInput
+        <Input
           type="text"
           name="name"
           value={formData.name}
@@ -18,17 +18,17 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           error={errors.name}
           maxLength={256}
         />
-        <AuthInput
+        <Input
           type="email"
           name="email"
           value={formData.email}
           onChange={onChange}
-          placeholder="Email" 
+          placeholder="Email"
           required
           error={errors.email}
           maxLength={256}
         />
-        <AuthInput
+        <Input
           type="tel"
           name="phoneNumber"
           value={formData.phoneNumber}
@@ -38,7 +38,7 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           error={errors.phoneNumber}
           maxLength={15}
         />
-        <AuthInput
+        <Input
           type="password"
           name="password"
           value={formData.password}
@@ -48,7 +48,7 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           error={errors.password}
           maxLength={256}
         />
-        <AuthInput
+        <Input
           type="password"
           name="passwordConfirm"
           value={formData.passwordConfirm}
@@ -58,9 +58,9 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           error={errors.passwordConfirm}
           maxLength={256}
         />
-        <AuthButton type="submit" variant="primary">
+        <Button type="submit" variant="primary">
           Registrarse
-        </AuthButton>
+        </Button>
       </form>
     </div>
   );

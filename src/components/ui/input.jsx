@@ -1,38 +1,34 @@
-import '../../styles/Input.css';
+import '../../styles/ui/input.css';
 
 const Input = ({
-  label,
   type = 'text',
   name,
   value,
   onChange,
   placeholder,
-  error,
   required = false,
-  disabled = false,
-  className = ''
+  className = '',
+  error = null,
+  maxLength = null,
+  minLength = null,
 }) => {
   return (
-    <div className={`input-group ${className}`}>
-      {label && (
-        <label htmlFor={name} className="input-label">
-          {label} {required && <span className="required">*</span>}
-        </label>
-      )}
+    <div className="auth-input-wrapper" style={{ width: '100%' }}>
       <input
         type={type}
-        id={name}
         name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        disabled={disabled}
-        className={`input-field ${error ? 'input-error' : ''}`}
+        className={`auth-input ${className} ${error ? 'input-error' : ''}`}
+        maxLength={maxLength}
+        minLength={minLength}
       />
-      {error && <span className="error-message">{error}</span>}
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
 
 export default Input;
+

@@ -1,29 +1,19 @@
-import React from 'react';
-import '../../styles/ui/Button.css';
+import '../../styles/ui/button.css';
 
-/**
- * Common Button component
- * @param {string} variant - 'primary', 'outline-success', etc.
- * @param {string} type - 'button', 'submit', 'reset'
- * @param {function} onClick - Click handler
- * @param {React.ReactNode} children - Button content
- * @param {string} className - Additional classes
- * @param {object} props - Other props
- */
-const Button = ({ 
-  variant = 'primary', 
-  type = 'button', 
-  onClick, 
-  children, 
-  className = '', 
-  ...props 
+const Button = ({
+  children,
+  type = 'button',
+  variant = 'primary',
+  onClick,
+  className = ''
 }) => {
+  const buttonClass = `auth-button auth-button-${variant} ${className}`;
+  
   return (
     <button
       type={type}
-      className={`btn btn-${variant} ${className}`}
+      className={buttonClass}
       onClick={onClick}
-      {...props}
     >
       {children}
     </button>
@@ -31,3 +21,4 @@ const Button = ({
 };
 
 export default Button;
+

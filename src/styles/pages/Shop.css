@@ -1,47 +1,49 @@
-/* src/styles/pages/Shop.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
 .shop-page {
   width: 100%;
   padding-bottom: 3rem;
-  background-color: transparent; /* Removed white background */
+  background-color: transparent;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* Ensure no default margins affect the immersive feel */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  padding-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+/*   min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; */
+  box-sizing: border-box;
 }
 
 .shop-container {
   width: 100%;
-  max-width: 1600px; /* Wider container for more products */
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1rem; /* Reduced padding */
+  padding: 0 1rem;
 }
 
 .shop-hero-section {
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 10;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .shop-product-grid {
-    display: grid;
-    /* Smaller cards: min 200px */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-    gap: 1rem; /* Smaller gap */
-    margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Header for sections if needed */
 .section-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #333;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
 }

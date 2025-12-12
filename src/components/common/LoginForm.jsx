@@ -1,13 +1,13 @@
-import '../../styles/common/LoginForm.css';
-import AuthInput from '../ui/AuthInput';
-import AuthButton from '../ui/AuthButton';
+import '../../styles/common/login.form.css';
+import Input from '../ui/Input';
+import Button from '../ui/Button';
 
 const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
   return (
     <div className="form-container sign-in">
       <form onSubmit={onSubmit} noValidate>
         <h1>Iniciar sesión</h1>
-        <AuthInput
+        <Input
           type="email"
           name="email"
           value={formData.email}
@@ -17,7 +17,7 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           error={errors.email}
           maxLength={256}
         />
-        <AuthInput
+        <Input
           type="password"
           name="password"
           value={formData.password}
@@ -28,10 +28,10 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           maxLength={256}
         />
         <a href="#" id="contra">¿Olvidaste tu contraseña?</a>
-        <a href="#" id="return">Volver a la tienda</a>
-        <AuthButton type="submit" variant="primary">
+    {/*     <a href="#" id="return">Volver a la tienda</a> */}
+        <Button type="submit" variant="primary">
           Iniciar sesión
-        </AuthButton>
+        </Button>
       </form>
     </div>
   );
