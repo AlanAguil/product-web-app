@@ -1,7 +1,7 @@
 import ProductCard from '@/components/common/ProductCard';
 import Navbar from '@/components/layout/Navbar';
 import Carousel from '@/components/ui/Carousel';
-import '../styles/pages/Shop.css';
+import "../styles/pages/shop.css";
 import { products } from '@/mocks/products';
 import { carouselImages } from '@/mocks/carousel';
 
