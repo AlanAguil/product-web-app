@@ -3,7 +3,7 @@ import LoginForm from '../components/common/LoginForm';
 import RegisterForm from '../components/common/RegisterForm';
 import AuthLayout from '../components/layout/Layout';
 import Waves from '../components/layout/Waves';
-import "@/styles/pages/login.css";
+import "../styles/pages/login.css";
 import {
   handleNumericChange,
   validateEmailFormat,
