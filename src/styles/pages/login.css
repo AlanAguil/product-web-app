@@ -20,14 +20,9 @@
     min-height: 100vh;
     padding: 20px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
-/* Ajustes para zoom alto (140%+) */
-@media (min-resolution: 140dpi) {
-    body {
-        padding: 10px;
-    }
-}
+
 

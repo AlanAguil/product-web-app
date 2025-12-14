@@ -85,28 +85,64 @@
         width: 100%;
     }
 
+    .form-container {
+        top: 25%; /* Start higher to ensure coverage by overlay */
+        height: 75%; /* Fill rest */
+        padding-top: 40px; /* Push content down so it starts after the curve */
+        z-index: 1; /* Below toggle-container (1000) */
+    }
+
+    /* Fix z-indexes for mobile */
+    .sign-in {
+        z-index: 2;
+    }
+    
+    .sign-up {
+        z-index: 2;
+    }
+
     .auth-container.active .sign-in {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 0;
+        z-index: 1;
+        visibility: hidden; /* Hide completely */
+        transition-delay: 0s;
     }
 
     .auth-container.active .sign-up {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
+        z-index: 5;
+        visibility: visible;
+        animation: none;
+    }
+    
+    .sign-in {
+        transform: translateY(0);
+        visibility: visible;
+        transition: opacity 0.6s ease-in-out, visibility 0.6s;
+    }
+    
+    .sign-up {
+        transform: translateY(0);
+        visibility: hidden;
+        transition: opacity 0.6s ease-in-out, visibility 0.6s;
     }
 
     .form-container form {
-        padding: 15px 25px;
+        padding: 0 25px 20px; /* Reduced vertical padding + bottom space */
+        justify-content: flex-start; /* Align to top to avoid centering if content is long */
     }
 
     .form-container form h1 {
         font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .form-container form {
-        padding: 15px 20px;
+        padding: 0 20px;
     }
 
     .form-container form h1 {
