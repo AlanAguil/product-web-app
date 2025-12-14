@@ -1,0 +1,82 @@
+:root {
+  /* Light (default) */
+  --bg: #ffffff;
+  --surface: #f7f7f7;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --border: #e5e7eb;
+
+  /* Additional helper tokens mapping to the requested structure ensuring full UI support */
+  --bg-input: #ffffff;
+  --bg-navbar: #ffffff;
+  --bg-hover: #e9ecef;
+  --bg-dropdown: #ffffff;
+  --text-main: #212529;
+  --text-secondary: #666666;
+  --text-inverted: #ffffff;
+  --text-link: #495057;
+  --text-link-hover: #000000;
+  
+  --navbar-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  --card-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Specific Border Tokens for better contrast */
+  /* #ced4da is approx gray-400, used previously for inputs */
+  --border-color: #ced4da; 
+  --input-border: #ced4da;
+  --input-focus-border: #60a5fa;
+
+  /* Brand / Status Colors (Global) */
+  --color-success: #28a745;
+  --color-danger: #e74c3c;
+  --color-warning-soft: #f8d7da;
+
+  /* Auth / Toggle Specifics */
+  --auth-bg: #ffffff;
+  --gradient-toggle: linear-gradient(135deg, #17a2b8 0%, #20c997 50%, #48d1cc 100%);
+  --text-toggle: #ffffff;
+  --border-auth: var(--color-success);
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #111a2e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #60a5fa;
+  --border: #22304a;
+
+  /* Dark mode mappings */
+  --bg-input: #0f172a;
+  --bg-navbar: #1e293b;
+  --bg-hover: #334155;
+  --bg-dropdown: #1e293b;
+  --text-main: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-inverted: #0f172a;
+  --text-link: #ced4da;
+  --text-link-hover: #ffffff;
+
+  --navbar-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  --card-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
+
+  --border-color: #334155;
+  --input-border: #334155;
+  --input-focus-border: #60a5fa;
+
+  /* Auth / Toggle Dark Mode */
+  --auth-bg: #1e293b; /* Matches surface color */
+  /* Darker/More subtle teal gradient for dark mode */
+  --gradient-toggle: linear-gradient(135deg, #0e5e6b 0%, #0f5c45 50%, #1f6460 100%);
+  --text-toggle: #e5e7eb;
+  /* Keeping green border for auth in dark mode as requested, maybe slightly adjusted if needed, but sticking to 'the green variable' logic */
+  --border-auth: var(--color-success);
+}
+
+/* Global Transitions */
+body, .navbar, .product-card, .search-input, .dropdown-menu {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

@@ -1,14 +1,18 @@
 /* Footer */
 .footer {
     padding: 1rem;
-    background-color: #001f4d;
-    color: #fff;
+    background-color: var(--color-primary-dark); /* Keeps brand dark blue */
+    color: var(--color-white); /* Always white text on dark bg */
     text-align: center;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-footer);
 }
 
+[data-theme="dark"] .footer {
+    background-color: var(--bg-surface); /* Optional: blend better in dark mode? Or keep brand? Keeping brand for now */
+    border-top: 1px solid var(--border-color);
+}

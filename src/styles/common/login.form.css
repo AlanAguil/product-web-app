@@ -48,7 +48,7 @@
 
 /* Estilo para el formulario dentro del contenedor */
 .form-container form {
-    background-color: #fff;
+    background-color: var(--auth-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,10 +58,11 @@
     width: 100%;
     box-sizing: border-box;
     overflow-y: auto;
+    transition: background-color 0.3s ease;
 }
 
 .form-container form h1 {
-    color: #333;
+    color: var(--text-main);
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 700;

@@ -19,8 +19,8 @@
 
 /* Estilo para el panel de cambio */
 .toggle {
-    background: linear-gradient(135deg, #17a2b8 0%, #20c997 50%, #48d1cc 100%);
-    color: #fff;
+    background: var(--gradient-toggle);
+    color: var(--text-toggle);
     position: relative;
     left: -100%;
     height: 100%;

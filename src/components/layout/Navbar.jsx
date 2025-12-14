@@ -1,10 +1,25 @@
-import Button from '@/components/ui/Button';
+import menu from '@/assets/png/menu.png';
+import { useAuth } from '@/contexts/AuthContext';
 import { categories } from '@/mocks/categories';
-import { stringConstants } from '@/utils/string.constants';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/layout/navbar.css';
-import logo from '@/assets/png/manos.mexicanas.png';
+import Button from '../ui/Button';
+import ThemeSwitcher from '../ui/ThemeSwitcher';
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
+    const navigate = useNavigate();
+    const { isAuthenticated } = useAuth();
+    // Navbar ya no necesita acceder al tema directamente, lo hace el Switcher
+
+    const handleCartClick = (e) => {
+        e.preventDefault();
+        if (!isAuthenticated) {
+            alert("Debes de iniciar sesión para ver tu carrito");
+        } else {
+            navigate('/cart');
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="navbar-container">
@@ -12,9 +27,9 @@ const Navbar = () => {
                 <div className="dropdown-container">
                     <div className="nav-link" role="button">
                         <img
-                            src="/img/menu.png"
+                            src={menu}
                             alt="Categorías"
-                            style={{ height: '30px' }}
+                            style={{ height: '50%' }}
                             onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '☰'; }}
                         />
                     </div>
@@ -25,17 +40,6 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Brand Logo & Name */}
-                <a className="navbar-brand" href="/">
-                    <img
-                        src={logo}
-                        alt="Logo"
-                        className="navbar-logo"
-                        onError={(e) => { e.target.style.display = 'none'; }} // Fallback logic
-                    />
-                    <span>{stringConstants.appName}</span>
-                </a>
-
                 {/* Search, Cart, User */}
                 <ul className="navbar-nav">
                     <li>
@@ -45,15 +49,13 @@ const Navbar = () => {
                                 type="search"
                                 placeholder="Buscar productos..."
                                 aria-label="Search"
+                                onChange={(e) => onSearch && onSearch(e.target.value)}
                             />
-                            <Button variant="outline-success" type="submit" className="nav-search-btn">
-                                <span role="img" aria-label="search">🔍</span>
-                            </Button>
                         </form>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="/cart">
+                        <a className="nav-link" href="#" onClick={handleCartClick}>
                             <img
                                 src="/img/cart.png"
                                 alt="Carrito"
@@ -63,7 +65,9 @@ const Navbar = () => {
                             />
                         </a>
                     </li>
-
+                    <li className="nav-item">
+                        <ThemeSwitcher />
+                    </li>
                     <li className="nav-item">
                         <Button
                             variant="primary"
@@ -73,18 +77,6 @@ const Navbar = () => {
                         >
                             Iniciar Sesión
                         </Button>
-                    </li>
-
-                    <li className="nav-item">
-                        <a className="nav-link" href="/profile">
-                            <img
-                                src="/img/usuario.png"
-                                alt="Perfil"
-                                className="nav-icon"
-                                style={{ height: '32px' }}
-                                onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '👤'; }}
-                            />
-                        </a>
                     </li>
                 </ul>
             </div>
