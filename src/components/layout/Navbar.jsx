@@ -1,4 +1,5 @@
 import menu from '@/assets/png/menu.png';
+import cart from '@/assets/png/cart.png';
 import { useAuth } from '@/contexts/AuthContext';
 import { categories } from '@/mocks/categories';
 import { useNavigate } from 'react-router-dom';
@@ -57,10 +58,10 @@ const Navbar = ({ onSearch }) => {
                     <li className="nav-item">
                         <a className="nav-link" href="#" onClick={handleCartClick}>
                             <img
-                                src="/img/cart.png"
+                                src={cart}
                                 alt="Carrito"
                                 className="nav-icon"
-                                style={{ height: '30px' }}
+                                style={{ height: '60%' }}
                                 onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '🛒'; }}
                             />
                         </a>
