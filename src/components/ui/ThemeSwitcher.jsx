@@ -1,5 +1,8 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { stringConstants } from "../../utils/string.constants";
+import moon from '@/assets/png/moon.png';
+import sun from '@/assets/png/sun.png';
+import system from '@/assets/png/laptop.png';
 
 export function ThemeSwitcher() {
   const { mode, setMode } = useTheme();

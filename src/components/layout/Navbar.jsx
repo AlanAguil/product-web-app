@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import menu from '@/assets/png/menu.png';
 import cart from '@/assets/png/cart.png';
+import userIcon from '@/assets/png/user.png';
 import { useAuth } from '@/contexts/AuthContext';
 import { categories } from '@/mocks/categories';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +12,11 @@ import ThemeSwitcher from '../ui/ThemeSwitcher';
 const Navbar = ({ onSearch }) => {
     const navigate = useNavigate();
     const { isAuthenticated } = useAuth();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
     // Navbar ya no necesita acceder al tema directamente, lo hace el Switcher
 
     const handleCartClick = (e) => {
@@ -26,7 +33,7 @@ const Navbar = ({ onSearch }) => {
             <div className="navbar-container">
                 {/* Categories Dropdown Trigger (Hamburger/Menu) */}
                 <div className="dropdown-container">
-                    <div className="nav-link" role="button">
+                    <div className="nav-link" role="button" onClick={toggleMenu}>
                         <img
                             src={menu}
                             alt="Categorías"
@@ -34,7 +41,7 @@ const Navbar = ({ onSearch }) => {
                             onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '☰'; }}
                         />
                     </div>
-                    <div className="dropdown-menu">
+                    <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
                         {categories.map((cat, index) => (
                             <a key={index} className="dropdown-item" href="#">{cat}</a>
                         ))}
@@ -43,7 +50,7 @@ const Navbar = ({ onSearch }) => {
 
                 {/* Search, Cart, User */}
                 <ul className="navbar-nav">
-                    <li>
+                    <li className="nav-search-item">
                         <form className="search-form" onSubmit={(e) => e.preventDefault()}>
                             <input
                                 className="search-input"
@@ -74,9 +81,10 @@ const Navbar = ({ onSearch }) => {
                             variant="primary"
                             className="nav-auth-btn"
                             onClick={() => window.location.href = '/login'}
-                            style={{ marginLeft: '0.5rem' }}
+                            style={{ marginLeft: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem' }}
                         >
-                            Iniciar Sesión
+                            <img src={userIcon} alt="Login" className="nav-btn-icon" style={{ height: '20px', width: '20px', filter: 'brightness(0)' }} />
+                            <span className="nav-btn-text">Iniciar Sesión</span>
                         </Button>
                     </li>
                 </ul>
