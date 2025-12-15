@@ -62,16 +62,18 @@ const Navbar = ({ onSearch }) => {
                         </form>
                     </li>
 
-                    <li className="nav-item">
-                        <a className="nav-link" href="#" onClick={handleCartClick}>
-                            <img
-                                src={cart}
-                                alt="Carrito"
-                                className="nav-icon nav-cart-icon"
-                                onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '🛒'; }}
-                            />
-                        </a>
-                    </li>
+                    {isAuthenticated && (
+                        <li className="nav-item">
+                            <a className="nav-link" href="#" onClick={handleCartClick}>
+                                <img
+                                    src={cart}
+                                    alt="Carrito"
+                                    className="nav-icon nav-cart-icon"
+                                    onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '🛒'; }}
+                                />
+                            </a>
+                        </li>
+                    )}
                     <li className="nav-item">
                         <ThemeSwitcher />
                     </li>

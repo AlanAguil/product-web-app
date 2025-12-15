@@ -2,7 +2,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { stringConstants } from "../../utils/string.constants";
 import moon from '@/assets/png/moon.png';
 import sun from '@/assets/png/sun.png';
-import system from '@/assets/png/laptop.png';
+import system from '@/assets/png/monitor.png';
 
 import '../../styles/ui/theme-switcher.css';
 
@@ -19,14 +19,14 @@ export function ThemeSwitcher() {
   // Obtener etiqueta y emoji actual
   const getCurrentInfo = () => {
     switch (mode) {
-        case 'light': return { emoji: '☀️', label: stringConstants.lightMode, next: 'Ir a modo oscuro' };
-        case 'dark': return { emoji: '🌙', label: stringConstants.darkMode, next: 'Ir a modo sistema' };
-        case 'system': return { emoji: '💻', label: stringConstants.systemMode, next: 'Ir a modo claro' };
-        default: return { emoji: '☀️', label: stringConstants.lightMode, next: 'Ir a modo oscuro' };
+        case 'light': return { icon: sun, label: stringConstants.lightMode, next: 'Ir a modo oscuro' };
+        case 'dark': return { icon: moon, label: stringConstants.darkMode, next: 'Ir a modo sistema' };
+        case 'system': return { icon: system, label: stringConstants.systemMode, next: 'Ir a modo claro' };
+        default: return { icon: sun, label: stringConstants.lightMode, next: 'Ir a modo oscuro' };
     }
   };
 
-  const { emoji, label, next } = getCurrentInfo();
+  const { icon, label, next } = getCurrentInfo();
 
   return (
     <div className="theme-switcher-container">
@@ -36,7 +36,7 @@ export function ThemeSwitcher() {
             aria-label={`Tema actual: ${label}. Clic para ${next}`}
             title={`Actual: ${label}. ${next}`}
         >
-            {emoji}
+            <img src={icon} alt={label} className="theme-icon" />
         </button>
     </div>
   );

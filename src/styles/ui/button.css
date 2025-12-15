@@ -73,3 +73,30 @@
         font-size: 11px;
     }
 }
+
+/* Secondary Button Style (Outline) */
+.btn-secondary-outline {
+    background-color: transparent !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+.btn-secondary-outline:hover {
+    background-color: rgba(37, 99, 235, 0.05) !important;
+}
+
+[data-theme="dark"] .btn-secondary-outline {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+/* Primary Button Style (Solid) */
+.btn-primary-solid {
+    background-color: var(--primary) !important;
+    border: 1px solid var(--primary) !important;
+    color: #fff !important;
+}
+
+.btn-primary-solid:hover {
+    opacity: 0.9;
+}
