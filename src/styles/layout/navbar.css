@@ -246,6 +246,8 @@
         border-radius: 0.25rem !important;
     }
     
+
+    
     .nav-auth-btn img {
         margin: 0 !important;
     }
@@ -261,4 +263,26 @@
         padding: 0;
         justify-content: center;
     }
+}
+
+.nav-menu-icon {
+    height: 50%;
+}
+
+.nav-cart-icon {
+    height: 60%;
+}
+
+.nav-auth-btn {
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.nav-btn-icon {
+    height: 20px;
+    width: 20px;
+    filter: brightness(0);
 }

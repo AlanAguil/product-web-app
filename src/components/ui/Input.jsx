@@ -13,7 +13,7 @@ const Input = ({
   minLength = null,
 }) => {
   return (
-    <div className="auth-input-wrapper" style={{ width: '100%' }}>
+    <div className="auth-input-wrapper">
       <input
         type={type}
         name={name}

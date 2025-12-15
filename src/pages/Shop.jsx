@@ -28,7 +28,7 @@ const Shop = () => {
                                 <ProductCard key={product.id} product={product} />
                             ))
                         ) : (
-                            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '1.5rem' }}>
+                            <div className="no-products-message">
                                 <p>No se encontraron productos que coincidan con tu búsqueda.</p>
                             </div>
                         )}

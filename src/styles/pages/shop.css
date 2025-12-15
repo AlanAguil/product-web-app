@@ -51,3 +51,9 @@
   text-align: center;
   color: var(--text-main);
 }
+
+.no-products-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1.5rem;
+}

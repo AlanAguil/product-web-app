@@ -4,6 +4,8 @@ import moon from '@/assets/png/moon.png';
 import sun from '@/assets/png/sun.png';
 import system from '@/assets/png/laptop.png';
 
+import '../../styles/ui/theme-switcher.css';
+
 export function ThemeSwitcher() {
   const { mode, setMode } = useTheme();
 
@@ -27,7 +29,7 @@ export function ThemeSwitcher() {
   const { emoji, label, next } = getCurrentInfo();
 
   return (
-    <div className="theme-switcher-container" style={{ margin: '0 0.5rem' }}>
+    <div className="theme-switcher-container">
         <button 
             className="theme-toggle-btn" 
             onClick={toggleTheme}

@@ -13,7 +13,7 @@ const Navbar = ({ onSearch }) => {
     const navigate = useNavigate();
     const { isAuthenticated } = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -37,7 +37,7 @@ const Navbar = ({ onSearch }) => {
                         <img
                             src={menu}
                             alt="Categorías"
-                            style={{ height: '50%' }}
+                            className="nav-menu-icon"
                             onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '☰'; }}
                         />
                     </div>
@@ -67,8 +67,7 @@ const Navbar = ({ onSearch }) => {
                             <img
                                 src={cart}
                                 alt="Carrito"
-                                className="nav-icon"
-                                style={{ height: '60%' }}
+                                className="nav-icon nav-cart-icon"
                                 onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '🛒'; }}
                             />
                         </a>
@@ -81,9 +80,8 @@ const Navbar = ({ onSearch }) => {
                             variant="primary"
                             className="nav-auth-btn"
                             onClick={() => window.location.href = '/login'}
-                            style={{ marginLeft: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem' }}
                         >
-                            <img src={userIcon} alt="Login" className="nav-btn-icon" style={{ height: '20px', width: '20px', filter: 'brightness(0)' }} />
+                            <img src={userIcon} alt="Login" className="nav-btn-icon" />
                             <span className="nav-btn-text">Iniciar Sesión</span>
                         </Button>
                     </li>

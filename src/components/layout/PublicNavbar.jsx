@@ -1,5 +1,6 @@
 import { categories } from '@/mocks/categories';
 import { stringConstants } from '@/utils/string.constants';
+import '../../styles/layout/public-navbar.css';
 
 const PublicNavbar = () => {
   return (
@@ -25,7 +26,7 @@ const PublicNavbar = () => {
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <img src="/img/menu.png" alt="Categorías" style={{ height: 30 }} />
+          <img src="/img/menu.png" alt="Categorías" className="public-menu-icon" />
         </button>
         <div className="dropdown-menu" aria-labelledby="publicNavbarDropdown">
           {categories.map((category) => (
@@ -40,7 +41,7 @@ const PublicNavbar = () => {
         <img
           src="/img/logo_Manos_Mexicanas-removebg-preview.png"
           alt="Logo Manos Mexicanas"
-          style={{ height: 50 }}
+          className="public-logo"
         />
         <span className="ml-2">{stringConstants.appName}</span>
       </a>
@@ -56,13 +57,13 @@ const PublicNavbar = () => {
                 aria-label="Buscar"
               />
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                <img src="/img/search.png" alt="Buscar" style={{ height: 20 }} />
+                <img src="/img/search.png" alt="Buscar" className="public-search-icon" />
               </button>
             </form>
           </li>
           <li className="nav-item ml-3">
             <a className="nav-link" href="#">
-              <img src="/img/cart.png" alt="Carrito" style={{ height: 30 }} />
+              <img src="/img/cart.png" alt="Carrito" className="public-cart-icon" />
             </a>
           </li>
           <li className="nav-item ml-3">
@@ -72,7 +73,7 @@ const PublicNavbar = () => {
           </li>
           <li className="nav-item ml-3">
             <a className="nav-link" href="#">
-              <img src="/img/usuario.png" alt="Perfil" style={{ height: 32 }} />
+              <img src="/img/usuario.png" alt="Perfil" className="public-user-icon" />
             </a>
           </li>
         </ul>
