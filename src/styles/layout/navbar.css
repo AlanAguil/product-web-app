@@ -72,6 +72,14 @@
     color: var(--text-link-hover);
 }
 
+.nav-link:hover img,
+.nav-link.active img { /* Active state for cart */
+    filter: invert(56%) sepia(68%) saturate(350%) hue-rotate(115deg) brightness(95%) contrast(85%);
+    /* This filter approximates #20c997 (Brand Green) from black. 
+       Since we can't use simple 'color' on img, we use a filter generator result or CSS mask. 
+       Simplest consistent way for PNGs without SVG conversion is filter. */
+}
+
 /* Icons within nav links (adjust color for dark mode) */
 /* Icons within nav links */
 .nav-link img {
@@ -107,9 +115,9 @@
 .search-input:focus {
     color: var(--text-main);
     background-color: var(--bg-input);
-    border-color: var(--input-focus-border);
+    border-color: var(--color-brand-green);
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 255, 98, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.25); /* Brand green shadow */
 }
 
 /* Dropdown */

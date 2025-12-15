@@ -18,14 +18,14 @@
 }
 
 .auth-button-primary {
-    background-color: #f8d7da;
-    color: #000;
+    background-color: var(--btn-auth-bg);
+    color: var(--btn-auth-text);
 }
 
 .auth-button-primary:hover {
     transform: scale(1.05);
-    background-color: #f5c6cb;
-    box-shadow: 0 4px 8px rgba(248, 215, 218, 0.4);
+    background-color: var(--btn-auth-hover-bg);
+    box-shadow: 0 4px 8px var(--btn-auth-shadow-color);
 }
 
 .auth-button-outline {
@@ -75,19 +75,22 @@
 }
 
 /* Secondary Button Style (Outline) */
+/* Secondary Button Style (Outline) - Now Brand Green */
 .btn-secondary-outline {
     background-color: transparent !important;
-    border: 1px solid var(--primary) !important;
-    color: var(--primary) !important;
+    border: 1px solid var(--color-brand-green) !important;
+    color: var(--color-brand-green) !important;
+    font-weight: 700;
 }
 
 .btn-secondary-outline:hover {
-    background-color: rgba(37, 99, 235, 0.05) !important;
+    background-color: rgba(32, 201, 151, 0.1) !important; /* Soft green bg */
+    transform: scale(1.02);
 }
 
 [data-theme="dark"] .btn-secondary-outline {
-    border-color: var(--primary) !important;
-    color: var(--primary) !important;
+    border-color: var(--color-brand-green) !important;
+    color: var(--color-brand-green) !important;
 }
 
 /* Primary Button Style (Solid) */

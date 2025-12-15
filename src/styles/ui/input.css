@@ -19,7 +19,7 @@
 
 .auth-input:focus {
     border-color: var(--input-focus-border);
-    box-shadow: var(--shadow-glow-green);
+    box-shadow: var(--shadow-focus);
     background-color: var(--bg-input);
 }
 
