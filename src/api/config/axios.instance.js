@@ -5,7 +5,7 @@ import { requestInterceptor, requestErrorInterceptor, responseInterceptor, respo
 // 1. Crear la instancia con configuración base
 const axiosInstance = axios.create({
     // Es buena práctica usar variables de entorno
-    baseURL: import.meta.env.VITE_API_URL || 'https://manos-mexicanas-core.duckdns.org/api',
+    baseURL: import.meta.env.VITE_API_URL,
     timeout: 10000, // 10 segundos de espera antes de cancelar
     headers: {
         'Content-Type': 'application/json',
