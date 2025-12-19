@@ -1,6 +1,6 @@
-import '../../styles/common/login.form.css';
-import Input from '../ui/Input';
-import Button from '../ui/Button';
+import '../styles/login.form.css';
+import Input from '@/components/ui/Input';
+import Button from '@/components/ui/Button';
 
 const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
 

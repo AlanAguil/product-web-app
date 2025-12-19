@@ -1,5 +1,5 @@
-import '../../styles/layout/layout.css';
-import OverlayPanel from './OverlayPanel';
+import '@/components/layout/styles/layout.css';
+import OverlayPanel from '@/features/auth/components/OverlayPanel';
 
 const Layout = ({ isActive, onToggleToLogin, onToggleToRegister, children }) => {
   return (

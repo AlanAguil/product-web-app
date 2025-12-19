@@ -1,10 +1,10 @@
-import ProductCard from '@/components/common/ProductCard';
+import ProductCard from '@/features/shop/components/ProductCard';
 import Navbar from '@/components/layout/Navbar';
 import Carousel from '@/components/ui/Carousel';
-import { carouselImages } from '@/mocks/carousel';
-import { products } from '@/mocks/products';
+import { carouselImages } from '@/features/shop/mocks/carousel';
+import { products } from '@/features/shop/mocks/products';
 import { useState } from 'react';
-import "../styles/pages/shop.css";
+import "@/features/shop/styles/shop.css";
 
 const Shop = () => {
     const [searchTerm, setSearchTerm] = useState('');

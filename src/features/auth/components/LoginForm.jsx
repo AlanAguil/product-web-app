@@ -1,6 +1,6 @@
-import '../../styles/common/login.form.css';
-import Input from '../ui/Input';
-import Button from '../ui/Button';
+import '../styles/login.form.css';
+import Input from '@/components/ui/Input';
+import Button from '@/components/ui/Button';
 
 const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
   return (
@@ -28,7 +28,7 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           maxLength={256}
         />
         <a href="#" id="contra">¿Olvidaste tu contraseña?</a>
-    {/*     <a href="#" id="return">Volver a la tienda</a> */}
+        {/*     <a href="#" id="return">Volver a la tienda</a> */}
         <Button type="submit" variant="primary">
           Iniciar sesión
         </Button>

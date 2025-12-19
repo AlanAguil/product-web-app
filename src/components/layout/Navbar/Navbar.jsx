@@ -1,32 +1,19 @@
-import { useState } from 'react';
-import menu from '@/assets/png/menu.png';
-import cart from '@/assets/png/cart.png';
-import userIcon from '@/assets/png/user.png';
-import { useAuth } from '@/contexts/AuthContext';
-import { categories } from '@/mocks/categories';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/layout/navbar.css';
-import Button from '../ui/Button';
-import ThemeSwitcher from '../ui/ThemeSwitcher';
+import cart from '@/assets/ui/cart.png';
+import menu from '@/assets/ui/menu.png';
+import userIcon from '@/assets/ui/user.png';
+import { categories } from '@/features/shop/mocks/categories';
+import Button from '../../ui/Button';
+import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
+import './navbar.css';
+import { useNavbar } from './useNavbar';
 
 const Navbar = ({ onSearch }) => {
-    const navigate = useNavigate();
-    const { isAuthenticated } = useAuth();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-    // Navbar ya no necesita acceder al tema directamente, lo hace el Switcher
-
-    const handleCartClick = (e) => {
-        e.preventDefault();
-        if (!isAuthenticated) {
-            alert("Debes de iniciar sesión para ver tu carrito");
-        } else {
-            navigate('/cart');
-        }
-    };
+    const {
+        isAuthenticated,
+        isMenuOpen,
+        toggleMenu,
+        handleCartClick
+    } = useNavbar();
 
     return (
         <nav className="navbar">

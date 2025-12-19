@@ -1,5 +1,5 @@
 import Navbar from '@/components/layout/Navbar';
-import '@/styles/pages/cart.css';
+import '@/features/cart/styles/cart.css';
 
 const Cart = () => {
     return (

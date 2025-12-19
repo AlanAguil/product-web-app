@@ -1,4 +1,4 @@
-import '../../styles/ui/button.css';
+import './styles/button.css';
 
 const Button = ({
   children,

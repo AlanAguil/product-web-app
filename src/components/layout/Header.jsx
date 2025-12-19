@@ -1,5 +1,5 @@
 import { stringConstants } from '@/utils/string.constants';
-import '../../styles/layout/header.css';
+import './styles/header.css';
 
 const Header = () => {
   return (

@@ -1,5 +1,5 @@
-import '../../styles/layout/overlay.panel.css';
-import AuthButton from '../ui/Button';
+import '../styles/overlay.panel.css';
+import AuthButton from '@/components/ui/Button';
 
 const OverlayPanel = ({ isActive, onToggleToLogin, onToggleToRegister }) => {
   return (

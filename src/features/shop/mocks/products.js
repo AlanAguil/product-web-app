@@ -1,12 +1,12 @@
-import product1 from '@/assets/jpg/product.jpg';
-import product2 from '@/assets/jpg/product.2.jpg';
-import product3 from '@/assets/jpg/product.3.jpg';
-import product4 from '@/assets/jpg/product.4.jpg';
-import product5 from '@/assets/jpg/product.5.jpg';
-import product6 from '@/assets/jpg/product.6.jpg';
-import product7 from '@/assets/jpg/product.7.jpg';
-import product8 from '@/assets/jpg/product.8.jpg';
-import product9 from '@/assets/jpg/product.9.jpg';
+import product1 from '@/assets/products/product.jpg';
+import product2 from '@/assets/products/product.2.jpg';
+import product3 from '@/assets/products/product.3.jpg';
+import product4 from '@/assets/products/product.4.jpg';
+import product5 from '@/assets/products/product.5.jpg';
+import product6 from '@/assets/products/product.6.jpg';
+import product7 from '@/assets/products/product.7.jpg';
+import product8 from '@/assets/products/product.8.jpg';
+import product9 from '@/assets/products/product.9.jpg';
 
 export const products = [
     {

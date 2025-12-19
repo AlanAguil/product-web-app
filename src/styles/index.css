@@ -1,13 +1,8 @@
 @import './theme.css';
 
-/* Base styles placeholder for global overrides */
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--bg); /* Use token */
-  color: var(--text); /* Use token */
+  background-color: var(--bg);
+  color: var(--text);
 }
-
-/* Las variables específicas se han movido a theme.css */
-
-/* Mapping legacy classes/vars if needed, or rely on direct token usage in components */

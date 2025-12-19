@@ -1,4 +1,4 @@
-import '../../styles/ui/input.css';
+import './styles/input.css';
 
 const Input = ({
   type = 'text',
