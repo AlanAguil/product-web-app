@@ -1,7 +1,7 @@
 import '../styles/overlay.panel.css';
 import AuthButton from '@/components/ui/Button';
 
-const OverlayPanel = ({ isActive, onToggleToLogin, onToggleToRegister }) => {
+const OverlayPanel = ({ onToggleToLogin, onToggleToRegister }) => {
   return (
     <div className="toggle-container">
       <div className="toggle">

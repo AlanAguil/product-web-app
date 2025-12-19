@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import './styles/carousel.css';
+import React from 'react';
+import './carousel.css';
+import { useCarousel } from './useCarousel';
 
-/**
- * Custom Carousel Component
- * @param {Array} images - Array of image URLs
- */
 const Carousel = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  // Auto-advance
-  useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 5000);
-    return () => clearInterval(slideInterval);
-  }, [images.length]);
+  const {
+    currentSlide,
+    nextSlide,
+    prevSlide,
+    goToSlide
+  } = useCarousel(images);
 
   if (!images || images.length === 0) return null;
 

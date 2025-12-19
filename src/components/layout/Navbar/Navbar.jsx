@@ -1,11 +1,11 @@
+import './navbar.css';
 import cart from '@/assets/ui/cart.png';
 import menu from '@/assets/ui/menu.png';
 import userIcon from '@/assets/ui/user.png';
-import { categories } from '@/features/shop/mocks/categories';
-import Button from '../../ui/Button';
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
-import './navbar.css';
+import Button from '@/components/ui/Button';
 import { useNavbar } from './useNavbar';
+import { categories } from '@/features/shop/mocks/categories';
 
 const Navbar = ({ onSearch }) => {
     const {
