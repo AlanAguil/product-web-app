@@ -30,8 +30,8 @@
   /* Pastels (Auth/Buttons) */
   --color-pastel-pink: #f8d7da;
   --color-pastel-pink-hover: #f5c6cb;
-  --color-pastel-red: #ff3232;
-  --color-pastel-red-hover: #ff6565;
+  --color-pastel-red: #ffadad;
+  --color-pastel-red-hover: #ff8585;
 
   /* Backgrounds */
   --bg: var(--color-white);
