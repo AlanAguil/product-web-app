@@ -28,7 +28,6 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           maxLength={256}
         />
         <a href="#" id="contra">¿Olvidaste tu contraseña?</a>
-        {/*     <a href="#" id="return">Volver a la tienda</a> */}
         <Button type="submit" variant="primary">
           Iniciar sesión
         </Button>

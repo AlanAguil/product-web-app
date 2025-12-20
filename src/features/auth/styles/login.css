@@ -1,18 +1,10 @@
 /* Importar fuente Outfit de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 
-/* Resetea los márgenes, el relleno y establece el box-sizing para todos los elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
-}
-
 /* Estilo para el cuerpo de la página */
 .body-container {
-    background-color: #c9d6ff;
-    background: radial-gradient(circle, rgba(2,0,36,1) -50%, rgb(9, 121, 78) 35%, rgba(0,212,255,1) 100%);
+    background-color: var(--auth-bg); /* Fallback */
+    background: var(--gradient-login);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,5 +1,5 @@
-/* Navbar Style Refactored */
-.navbar {
+/* Header Style Refactored */
+.header-main {
     padding: 1rem;
     background-color: var(--primary); /* Using primary brand color */
     color: var(--text-inverted);

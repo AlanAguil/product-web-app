@@ -15,7 +15,7 @@
     height: 300px;
     border-radius: 50%;
     background: var(--gradient-teal); 
-    box-shadow: 2px 16px 16px rgba(72, 209, 204, 0.5); /* This is semi-transparent version of teal, could verify if we have a var for it or keep generic */
+    box-shadow: var(--shadow-waves); 
     filter: blur(25px);
     opacity: 0.7;
 }

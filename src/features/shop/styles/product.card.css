@@ -1,6 +1,6 @@
 /* src/styles/ui/ProductCard.css */
 .product-card {
-  background-color: var(--bg-card);
+  background-color: var(--auth-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
@@ -60,6 +60,7 @@
   flex-grow: 1;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -117,7 +118,7 @@
 
 .product-badge:hover {
     background-color: var(--color-brand-green);
-    color: #fff;
+    color: var(--badge-text);
     border-color: var(--color-brand-green);
 }
 
@@ -142,7 +143,7 @@
 }
 
 .star-icon.filled {
-    fill: #FFD700;
+    fill: var(--star-color);
 }
 
 .reviews-count {

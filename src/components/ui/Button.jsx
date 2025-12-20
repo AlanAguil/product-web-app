@@ -7,7 +7,6 @@ const Button = ({
   onClick,
   className = ''
 }) => {
-  // Map old 'auth-button' style variant names if they get passed, or just use new ones
   const buttonClass = `btn btn-${variant} ${className}`;
   
   return (

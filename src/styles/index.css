@@ -6,3 +6,11 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+/* Resetea los márgenes, el relleno y establece el box-sizing para todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}

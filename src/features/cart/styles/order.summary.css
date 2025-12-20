@@ -39,24 +39,8 @@
 }
 
 .checkout-btn {
-  width: 100%;
-  padding: 1rem;
-  background-color: var(--primary); /* or specific blue */
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.1s;
-}
-
-.checkout-btn:hover {
-  opacity: 0.9;
-}
-
-.checkout-btn:active {
-  transform: scale(0.99);
+  width: 100% !important;
+  margin-top: 1.5rem;
 }
 
 .security-badge {

@@ -29,7 +29,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
               <span className="badge-shipping">Envío gratis</span>
             )}
             {shipping === 'tomorrow' && (
-               <span className="badge-shipping" style={{ color: '#00a650' }}>Llega mañana</span>
+               <span className="badge-shipping text-success">Llega mañana</span>
             )}
           </div>
         </div>

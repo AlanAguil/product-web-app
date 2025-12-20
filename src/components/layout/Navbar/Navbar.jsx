@@ -73,7 +73,7 @@ const Navbar = ({ onSearch }) => {
                                 className="nav-auth-btn"
                                 onClick={() => window.location.href = '/login'}
                             >
-                                <img src={userIcon} alt="Login" className="nav-btn-icon" />
+                                <img src={userIcon} alt="Logout" className="nav-btn-icon" />
                                 <span className="nav-btn-text">Cerrar Sesión</span>
                             </Button>
                         </li>

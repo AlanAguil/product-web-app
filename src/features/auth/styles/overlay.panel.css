@@ -54,7 +54,7 @@
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--text-toggle);
 }
 
 .toggle-panel p {
@@ -62,7 +62,7 @@
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-toggle);
 }
 
 /* Estilo para el panel de texto a la izquierda */

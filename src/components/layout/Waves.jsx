@@ -1,13 +1,13 @@
 import './styles/waves.css';
 
-const Waves = () => { 
+const Waves = () => {
     return (
-        <div className="background-container">
+        <>
             <div className="wave-container">
                 <div className="wave left"></div>
                 <div className="wave right"></div>
             </div>
-        </div>
+        </>
     );
 };
 

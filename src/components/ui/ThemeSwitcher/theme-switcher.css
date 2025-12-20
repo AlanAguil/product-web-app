@@ -7,3 +7,22 @@
     width: 20px;
     filter: var(--icon-filter);
 }
+
+.theme-toggle-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    width: 38px;
+    height: 38px;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--bg-hover);
+}

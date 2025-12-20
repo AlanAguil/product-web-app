@@ -55,6 +55,10 @@
   font-weight: 600;
 }
 
+.text-success {
+  color: var(--color-success) !important;
+}
+
 .badge-stock {
   color: var(--muted);
   font-size: 0.8rem;

@@ -4,7 +4,7 @@ import './styles/header.css';
 const Header = () => {
   return (
     <header>
-      <nav className="navbar">
+      <nav className="header-main">
         <div className="logo-container">
           <div className="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" className="book-icon">

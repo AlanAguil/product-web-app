@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/order.summary.css';
+import Button from '@/components/ui/Button';
 
 const OrderSummary = ({ subtotal, shippingCost, total }) => {
   return (
@@ -25,9 +26,9 @@ const OrderSummary = ({ subtotal, shippingCost, total }) => {
         <span className="summary-value">${total.toFixed(2)}</span>
       </div>
 
-      <button className="checkout-btn">
+      <Button variant="primary" className="checkout-btn">
         Continuar compra
-      </button>
+      </Button>
 
       <div className="security-badge">
         <svg  width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
