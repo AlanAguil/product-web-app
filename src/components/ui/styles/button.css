@@ -1,5 +1,5 @@
-/* Estilo para los botones de autenticación */
-.auth-button {
+/* Core Button Styles */
+.btn {
     font-size: 12px;
     padding: 10px 45px;
     border: 1px solid transparent;
@@ -17,65 +17,74 @@
     margin-right: auto;
 }
 
-.auth-button-primary {
+/* Variants */
+.btn-primary {
     background-color: var(--btn-auth-bg);
     color: var(--btn-auth-text);
 }
 
-.auth-button-primary:hover {
+.btn-primary:hover {
     transform: scale(1.05);
     background-color: var(--btn-auth-hover-bg);
     box-shadow: 0 4px 8px var(--btn-auth-shadow-color);
 }
 
-.auth-button-outline {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
 }
 
-.auth-button-outline:hover {
+.btn-secondary:hover {
+    transform: scale(1.05);
+    background-color: var(--btn-secondary-hover-bg);
+    box-shadow: 0 4px 8px var(--btn-secondary-shadow-color);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--text-inverted);
+    color: var(--text-inverted);
+}
+
+.btn-outline:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
 }
 
-.auth-button.hidden,
-.auth-button-outline.hidden {
+/* Visibility utilities */
+.btn.hidden,
+.btn-outline.hidden {
     background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid var(--text-inverted);
+    color: var(--text-inverted);
 }
 
-.auth-button.hidden:hover,
-.auth-button-outline.hidden:hover {
+.btn.hidden:hover,
+.btn-outline.hidden:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
 }
 
+/* Product Card Specific Overrides (consider moving to product card css if strictly needed, but kept here for now) */
 .product-card-btn {
     width: 100% !important;
-    /* Ensure it takes full width */
     min-width: unset !important;
-    /* Remove the minimum width constraint */
     padding: 0.5rem !important;
-    /* Reduce padding */
     margin: 0 !important;
-    /* Reset margins */
     font-size: 0.9rem !important;
     text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
-    .auth-button {
+    .btn {
         min-width: 180px;
         padding: 10px 25px;
         font-size: 11px;
     }
 }
 
-/* Secondary Button Style (Outline) */
-/* Secondary Button Style (Outline) - Now Brand Green */
+/* Extra Variants */
 .btn-secondary-outline {
     background-color: transparent !important;
     border: 1px solid var(--color-brand-green) !important;
@@ -84,7 +93,7 @@
 }
 
 .btn-secondary-outline:hover {
-    background-color: rgba(32, 201, 151, 0.1) !important; /* Soft green bg */
+    background-color: rgba(32, 201, 151, 0.1) !important;
     transform: scale(1.02);
 }
 
@@ -93,11 +102,10 @@
     color: var(--color-brand-green) !important;
 }
 
-/* Primary Button Style (Solid) */
 .btn-primary-solid {
     background-color: var(--primary) !important;
     border: 1px solid var(--primary) !important;
-    color: #fff !important;
+    color: var(--color-white) !important;
 }
 
 .btn-primary-solid:hover {

@@ -1,0 +1,187 @@
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto; /* Image, Info, Price/Qty */
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-input); /* Use bg-input (white/dark) */
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-image-container {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  line-height: 1.25;
+}
+
+.item-title:hover {
+  text-decoration: underline;
+}
+
+.item-badges {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.badge-shipping {
+  color: var(--color-brand-green);
+  font-weight: 600;
+}
+
+.badge-stock {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.item-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--text-link); /* Blueish or Link color */
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.action-btn:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+.item-pricing {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  height: 32px;
+}
+
+.qty-btn {
+  background: var(--surface);
+  border: none;
+  width: 30px;
+  height: 100%;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background-color: var(--bg-hover);
+}
+
+.qty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty-input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  height: 100%;
+  appearance: none;
+  /* Firefox */
+  -moz-appearance: textfield; 
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.item-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.current-price {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-main);
+}
+
+.original-price {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    grid-template-areas:
+      "img info"
+      "actions actions";
+  }
+  
+  .item-pricing {
+    grid-area: actions;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .item-actions {
+    display: none; /* Simplify on mobile or move */
+  }
+
+  /* Maybe move actions to below title on mobile */
+}

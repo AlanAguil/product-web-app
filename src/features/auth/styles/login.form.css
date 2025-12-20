@@ -14,7 +14,7 @@
 }
 
 /* Cuando el contenedor tiene la clase "active", mueve el formulario de inicio de sesión */
-.auth-container.active .sign-in {
+.layout-card.active .sign-in {
     transform: translateX(100%);
 }
 
@@ -27,7 +27,7 @@
 }
 
 /* Cuando el contenedor tiene la clase "active", muestra el formulario de registro */
-.auth-container.active .sign-up {
+.layout-card.active .sign-up {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
@@ -101,7 +101,7 @@
         z-index: 2;
     }
 
-    .auth-container.active .sign-in {
+    .layout-card.active .sign-in {
         transform: translateY(0);
         opacity: 0;
         z-index: 1;
@@ -109,7 +109,7 @@
         transition-delay: 0s;
     }
 
-    .auth-container.active .sign-up {
+    .layout-card.active .sign-up {
         transform: translateY(0);
         opacity: 1;
         z-index: 5;

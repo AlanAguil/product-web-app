@@ -1,8 +1,8 @@
 /* Footer */
 .footer {
     padding: 1rem;
-    background-color: var(--color-primary-dark); /* Keeps brand dark blue */
-    color: var(--color-white); /* Always white text on dark bg */
+    background-color: var(--bg-navbar); /* Use unified navbar background (dark slate in dark mode, or appropriate in light) */
+    color: var(--text-inverted);
     text-align: center;
     width: 100%;
     position: fixed;
@@ -10,9 +10,10 @@
     left: 0;
     z-index: 1000;
     box-shadow: var(--shadow-footer);
+    border-top: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .footer {
-    background-color: var(--bg-surface); /* Optional: blend better in dark mode? Or keep brand? Keeping brand for now */
+    background-color: var(--bg-navbar);
     border-top: 1px solid var(--border-color);
 }

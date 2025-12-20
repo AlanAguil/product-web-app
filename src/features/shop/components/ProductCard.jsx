@@ -1,6 +1,5 @@
-import React from 'react';
 import Button from '@/components/ui/Button';
-import '@/features/shop/styles/product.card.css';
+import '../styles/product.card.css';
 import { useProductCard } from '../hooks/useProductCard';
 
 const StarIcon = ({ filled }) => (

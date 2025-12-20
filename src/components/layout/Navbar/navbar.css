@@ -1,4 +1,3 @@
-/* src/styles/layout/Navbar.css */
 .navbar {
     background-color: var(--bg-navbar);
     padding: 0.5rem 1rem;
@@ -73,20 +72,15 @@
 }
 
 .nav-link:hover img,
-.nav-link.active img { /* Active state for cart */
+.nav-link.active img {
+    /* Consider if we can make this filter dynamic or keep as specific magic */
     filter: invert(56%) sepia(68%) saturate(350%) hue-rotate(115deg) brightness(95%) contrast(85%);
-    /* This filter approximates #20c997 (Brand Green) from black. 
-       Since we can't use simple 'color' on img, we use a filter generator result or CSS mask. 
-       Simplest consistent way for PNGs without SVG conversion is filter. */
 }
 
-/* Icons within nav links (adjust color for dark mode) */
-/* Icons within nav links */
 .nav-link img {
     filter: var(--icon-filter);
 }
 
-/* Specific handling if some icons are colored */
 .nav-icon {
     height: 24px;
     width: auto;
@@ -117,10 +111,9 @@
     background-color: var(--bg-input);
     border-color: var(--color-brand-green);
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.25); /* Brand green shadow */
+    box-shadow: var(--shadow-focus);
 }
 
-/* Dropdown */
 .dropdown-container {
     position: relative;
     cursor: pointer;
@@ -170,7 +163,6 @@
     background-color: var(--bg-hover);
 }
 
-/* Theme Toggle Button */
 .theme-toggle-btn {
     background: none;
     border: 1px solid var(--border-color);
@@ -190,11 +182,25 @@
     background-color: var(--bg-hover);
 }
 
+.nav-link .theme-toggle-btn {
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link .theme-toggle-btn:hover {
+    background-color: transparent;
+}
+
 .nav-btn-icon {
     display: none;
 }
 
-/* Responsive */
+/* Mobile / Tablet Styles */
 @media (max-width: 992px) {
     .navbar-container {
         flex-wrap: nowrap;
@@ -226,7 +232,7 @@
 
     .search-input {
         width: 100%;
-        min-width: 150px; /* Force wider input to show text */
+        min-width: 150px;
         font-size: 0.9rem; 
         padding: 0.3rem 0.3rem;
     }
@@ -251,15 +257,12 @@
         border-radius: 0.25rem !important;
     }
     
-
-    
     .nav-auth-btn img {
         margin: 0 !important;
     }
 
-    /* Adjust logo/menu if needed */
     .dropdown-container {
-        margin-right: 0.5rem; /* Reduced margin to save space */
+        margin-right: 0.5rem;
     }
 
     .dropdown-container .nav-link {

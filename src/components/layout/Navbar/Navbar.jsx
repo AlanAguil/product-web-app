@@ -62,18 +62,33 @@ const Navbar = ({ onSearch }) => {
                         </li>
                     )}
                     <li className="nav-item">
-                        <ThemeSwitcher />
+                        <div className="nav-link">
+                            <ThemeSwitcher />
+                        </div>
                     </li>
-                    <li className="nav-item">
-                        <Button
-                            variant="primary"
-                            className="nav-auth-btn"
-                            onClick={() => window.location.href = '/login'}
-                        >
-                            <img src={userIcon} alt="Login" className="nav-btn-icon" />
-                            <span className="nav-btn-text">Iniciar Sesión</span>
-                        </Button>
-                    </li>
+                    {isAuthenticated ? (
+                        <li className="nav-item">
+                            <Button
+                                variant="secondary"
+                                className="nav-auth-btn"
+                                onClick={() => window.location.href = '/login'}
+                            >
+                                <img src={userIcon} alt="Login" className="nav-btn-icon" />
+                                <span className="nav-btn-text">Cerrar Sesión</span>
+                            </Button>
+                        </li>
+                    ) : (
+                        <li className="nav-item">
+                            <Button
+                                variant="primary"
+                                className="nav-auth-btn"
+                                onClick={() => window.location.href = '/login'}
+                            >
+                                <img src={userIcon} alt="Login" className="nav-btn-icon" />
+                                <span className="nav-btn-text">Iniciar Sesión</span>
+                            </Button>
+                        </li>
+                    )}
                 </ul>
             </div>
         </nav>

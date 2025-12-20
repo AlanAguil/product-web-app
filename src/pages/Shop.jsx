@@ -1,9 +1,10 @@
-import Navbar from '@/components/layout/Navbar';
 import Carousel from '@/components/layout/Carousel';
-import ProductCard from '@/features/shop/components/ProductCard';
-import { carouselImages } from '@/features/shop/mocks/carousel';
-import { products } from '@/features/shop/mocks/products';
-import "@/features/shop/styles/shop.css";
+import Navbar from '@/components/layout/Navbar';
+import {
+    ProductCard,
+    carouselImages,
+    products,
+} from '@/features/shop';
 import { useState } from 'react';
 
 const Shop = () => {

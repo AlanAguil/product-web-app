@@ -1,8 +1,8 @@
 import system from '@/assets/ui/monitor.png';
 import moon from '@/assets/ui/moon.png';
 import sun from '@/assets/ui/sun.png';
-import { useTheme } from "../../../contexts/ThemeContext";
-import { stringConstants } from "../../../utils/string.constants";
+import { useTheme } from '@/contexts/ThemeContext';
+import { stringConstants } from '@/utils/string.constants';
 
 export const useThemeSwitcher = () => {
   const { mode, setMode } = useTheme();

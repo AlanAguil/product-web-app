@@ -8,3 +8,6 @@ export * from './hooks/useAuthForm';
 
 /* Services */
 export * from './services/auth';
+
+/* Styles */
+import './styles/login.css';

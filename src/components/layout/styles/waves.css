@@ -1,24 +1,21 @@
 .wave-container {
     position: fixed;
-    /* Olas fijas sobre el fondo */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    /* Evita interacción */
     z-index: 1;
-    /* Coloca las olas encima del fondo pero detrás del contenido principal */
 }
 
-/* Estilos de las olas */
+/* Wave Styles */
 .wave {
     position: absolute;
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #17a2b8 0%, #20c997 50%, #48d1cc 100%);
-    box-shadow: 2px 16px 16px rgba(72, 209, 204, 0.5);
+    background: var(--gradient-teal); 
+    box-shadow: 2px 16px 16px rgba(72, 209, 204, 0.5); /* This is semi-transparent version of teal, could verify if we have a var for it or keep generic */
     filter: blur(25px);
     opacity: 0.7;
 }
@@ -35,7 +32,7 @@
     animation: moveWaveVertical 2.5s infinite ease-in-out alternate;
 }
 
-/* Animación de movimiento vertical */
+/* Animation */
 @keyframes moveWaveVertical {
     0% {
         transform: translateY(0);

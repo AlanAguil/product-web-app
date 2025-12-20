@@ -1,7 +1,7 @@
-/* Estilo para los campos de entrada de autenticación */
-.auth-input {
+/* Core Input Styles */
+.form-input {
     background-color: var(--bg-input);
-    border: 2px solid var(--border-auth);
+    border: 2px solid var(--input-border);
     margin: 8px 0 0 0;
     margin-bottom: 0 !important;
     padding: 10px 15px;
@@ -13,33 +13,32 @@
     transition: all 0.3s ease;
 }
 
-.auth-input::placeholder {
+.form-input::placeholder {
     color: var(--text-secondary);
 }
 
-.auth-input:focus {
+.form-input:focus {
     border-color: var(--input-focus-border);
     box-shadow: var(--shadow-focus);
     background-color: var(--bg-input);
 }
 
-
+/* Accessiblity / Error states */
 .input-error {
     border-color: var(--color-danger) !important;
 }
 
-/* Contenedor del input para eliminar cualquier gap */
-.auth-input-wrapper {
+/* Wrapper */
+.form-input-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0;
 }
 
+/* Error Message */
 .error-message {
-    margin: 0 !important;
-    margin-top: 2px !important;
-    margin-bottom: 0 !important;
+    margin: 2px 0 0 0 !important;
     padding: 0 !important;
     color: var(--color-danger);
     font-size: 12px;

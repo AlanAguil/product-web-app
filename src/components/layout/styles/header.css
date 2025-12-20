@@ -1,8 +1,8 @@
-/* Estilo de la barra de navegación */
+/* Navbar Style Refactored */
 .navbar {
     padding: 1rem;
-    background-color: #001f4d;
-    color: white;
+    background-color: var(--primary); /* Using primary brand color */
+    color: var(--text-inverted);
     text-align: center;
     width: 100%;
     position: fixed;
@@ -12,34 +12,33 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--navbar-shadow);
 }
 
-/* Icono de libro dentro del logo */
+/* Book Icon within Logo */
 .book-icon {
     width: 30px;
     height: 30px;
-    fill: white;
+    fill: var(--text-inverted);
 }
 
-/* Estilos del contenedor del logo */
+/* Logo Container */
 .logo-container {
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
 }
 
-/* Efecto hover en el logo */
+/* Hover Effect */
 .logo-container:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-/* Estilo del texto del logo */
+/* Logo Text */
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-inverted);
     margin-left: 10px;
 }
-

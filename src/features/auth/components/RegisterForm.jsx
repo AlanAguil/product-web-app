@@ -58,7 +58,7 @@ const RegisterForm = ({ formData, onChange, onSubmit, errors = {} }) => {
           error={errors.passwordConfirm}
           maxLength={256}
         />
-        <Button type="submit" variant="primary" className="auth-form-layout">
+        <Button type="submit" variant="primary">
           Registrarse
         </Button>
       </form>

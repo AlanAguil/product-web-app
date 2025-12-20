@@ -5,7 +5,7 @@ export function ThemeSwitcher() {
   const { toggleTheme, icon, label, next } = useThemeSwitcher();
 
   return (
-    <div className="theme-switcher-container">
+    <div>
       <button
         className="theme-toggle-btn"
         onClick={toggleTheme}

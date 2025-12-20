@@ -13,7 +13,7 @@ const Input = ({
   minLength = null,
 }) => {
   return (
-    <div className="auth-input-wrapper">
+    <div className="form-input-wrapper">
       <input
         type={type}
         name={name}
@@ -21,7 +21,7 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className={`auth-input ${className} ${error ? 'input-error' : ''}`}
+        className={`form-input ${className} ${error ? 'input-error' : ''}`}
         maxLength={maxLength}
         minLength={minLength}
       />
@@ -31,4 +31,3 @@ const Input = ({
 };
 
 export default Input;
-

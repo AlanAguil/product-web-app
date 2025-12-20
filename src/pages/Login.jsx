@@ -1,8 +1,6 @@
 import AuthLayout from '@/components/layout/Layout';
-import { LoginForm, RegisterForm } from '@/features/auth';
-import { useAuthForm } from '@/features/auth/hooks/useAuthForm';
-import "@/features/auth/styles/login.css";
 import Waves from '@/components/layout/Waves';
+import { LoginForm, RegisterForm, useAuthForm } from '@/features/auth';
 
 const Login = () => {
   const {

@@ -1,70 +1,108 @@
 :root {
-  /* Light (default) */
-  --bg: #ffffff;
-  --surface: #f7f7f7;
-  --text: #111827;
-  --muted: #6b7280;
-  --primary: #1e293b;
-  --border: #e5e7eb;
-
-  /* Additional helper tokens mapping to the requested structure ensuring full UI support */
-  --bg-input: #ffffff;
-  --bg-navbar: #ffffff;
-  --bg-hover: #e9ecef;
-  --bg-dropdown: #ffffff;
-  --text-main: #212529;
-  --text-secondary: #666666;
-  --text-inverted: #ffffff;
-  --text-link: #495057;
-  --text-link-hover: #000000;
+  /* =========================================
+     Base Palette (Primitive Colors)
+     ========================================= */
   
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f7f7f7; /* Previous surface */
+  --color-gray-200: #e5e7eb; /* Previous border */
+  --color-gray-300: #d1d5db; 
+  --color-gray-400: #ced4da; /* Previous border-color */
+  --color-gray-500: #9ca3af; /* Previous muted/stars */
+  --color-gray-600: #6b7280; /* Previous muted */
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827; /* Previous text */
+  --color-slate-800: #1e293b; /* Previous primary/navbar-dark */
+  --color-slate-900: #0f172a; /* Previous bg-input dark */
+
+  /* Brand Colors */
+  --color-brand-green: #20c997;
+  --color-brand-cyan: #17a2b8;
+  --color-brand-teal-light: #48d1cc;
+  
+  /* Feedback / functional colors */
+  --color-success: #28a745;
+  --color-danger: #e74c3c;
+  --color-danger-hover: #c0392b;
+  --color-warning-soft: #f8d7da;
+  
+  /* Pastels (Auth/Buttons) */
+  --color-pastel-pink: #f8d7da;
+  --color-pastel-pink-hover: #f5c6cb;
+  --color-pastel-red: #ffc2c2;
+  --color-pastel-red-hover: #ffb3b3;
+  --color-pastel-red-dark: #5c2b2b; /* Text for pastel red */
+  
+  /* =========================================
+     Semantic Tokens (Light Theme)
+     ========================================= */
+  
+  /* Backgrounds */
+  --bg: var(--color-white);
+  --bg-input: var(--color-white);
+  --bg-navbar: var(--color-white);
+  --bg-dropdown: var(--color-white);
+  --bg-hover: #e9ecef; /* Keep distinct for now or map to gray-100 */
+  --surface: var(--color-gray-100);
+  
+  /* Text */
+  --text: var(--color-gray-900);
+  --text-main: #212529; /* Slightly different gray from gray-900 */
+  --text-secondary: #666666;
+  --text-muted: var(--color-gray-600);
+  --text-inverted: var(--color-white);
+  --text-link: #495057;
+  --text-link-hover: var(--color-black);
+  
+  /* Borders */
+  --border: var(--color-gray-200);
+  --border-color: var(--color-gray-400); 
+  --input-border: var(--color-success);
+  --input-focus-border: #60a5fa;
+
+  /* Primary Brand */
+  --primary: var(--color-slate-800);
+  
+  /* Auth / Specifics */
+  --auth-bg: var(--color-white);
+  --border-auth: var(--color-success);
+  --text-toggle: var(--color-white);
+  
+  /* Gradient */
+  --gradient-toggle: linear-gradient(135deg, var(--color-brand-cyan) 0%, var(--color-brand-green) 50%, var(--color-brand-teal-light) 100%);
+  --gradient-login: radial-gradient(circle, rgba(2,0,36,1) -50%, rgb(9, 121, 78) 35%, rgba(0,212,255,1) 100%);
+  --gradient-teal: linear-gradient(135deg, var(--color-brand-cyan) 0%, var(--color-brand-green) 50%, var(--color-brand-teal-light) 100%);
+
+  /* Icons */
+  --icon-filter: brightness(0);
+  
+  /* Badges & Stars */
+  --badge-bg: var(--color-brand-green);
+  --badge-text: var(--color-white);
+  --badge-border: 1px solid transparent;
+  --star-color: var(--color-gray-500);
+
+  /* Buttons: Primary (Pink/Auth) */
+  --btn-auth-bg: var(--color-pastel-pink);
+  --btn-auth-text: var(--color-black);
+  --btn-auth-hover-bg: var(--color-pastel-pink-hover);
+  --btn-auth-shadow-color: rgba(248, 215, 218, 0.4);
+
+  /* Buttons: Secondary (Logout/Pastel Red) */
+  --btn-secondary-bg: var(--color-pastel-red);
+  --btn-secondary-text: var(--color-pastel-red-dark);
+  --btn-secondary-hover-bg: var(--color-pastel-red-hover);
+  --btn-secondary-shadow-color: rgba(255, 179, 179, 0.4);
+
+  /* Shadows */
   --navbar-shadow: 0 2px 4px rgba(0,0,0,0.08);
   --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
   --card-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
-
-  /* Specific Border Tokens for better contrast */
-  /* #ced4da is approx gray-400, used previously for inputs */
-  --border-color: #ced4da; 
-  --input-border: #ced4da;
-  --input-focus-border: #60a5fa;
-
-  /* Brand / Status Colors (Global) */
-  --color-success: #28a745;
-  --color-danger: #e74c3c;
-  --color-warning-soft: #f8d7da;
-  --color-brand-green: #20c997; /* This matches the teal gradient mid-point */
-
-  /* Auth / Toggle Specifics */
-  --auth-bg: #ffffff;
-  --gradient-toggle: linear-gradient(135deg, #17a2b8 0%, #20c997 50%, #48d1cc 100%);
-  --text-toggle: #ffffff;
-  --border-auth: var(--color-success);
-
-  --icon-filter: brightness(0);
-
-  /* New Centralized Colors */
-  /* Badges - User requested Grid/Brand Green by default */
-  --badge-bg: var(--color-brand-green);
-  --badge-text: #ffffff;
-  --badge-border: 1px solid transparent;
-
-  /* Stars */
-  --star-color: #9ca3af;
-
-  /* Auth Buttons (Pink) */
-  --btn-auth-bg: #f8d7da;
-  --btn-auth-text: #000000;
-  --btn-auth-hover-bg: #f5c6cb;
-  --btn-auth-shadow-color: rgba(248, 215, 218, 0.4);
-
-  /* Shadows */
   --shadow-focus: 0 0 0 0.2rem rgba(0, 255, 98, 0.25);
-
-  /* --- Gradients --- */
-  --gradient-teal: linear-gradient(135deg, #17a2b8 0%, #20c997 50%, #48d1cc 100%);
-  --gradient-login: radial-gradient(circle, rgba(2,0,36,1) -50%, rgb(9, 121, 78) 35%, rgba(0,212,255,1) 100%);
-  
-  /* --- Shadows Extras --- */
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 5px 15px rgba(0, 0, 0, 0.35);
   --shadow-footer: 0 -2px 10px rgba(0, 0, 0, 0.2);
@@ -72,58 +110,65 @@
 }
 
 [data-theme="dark"] {
+  /* Backgrounds */
   --bg: #0b1220;
   --surface: #111a2e;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --primary: #fff;
-  --border: #22304a;
-
-  /* Dark mode mappings */
-  --bg-input: #0f172a;
-  --bg-navbar: #1e293b;
+  --bg-input: var(--color-slate-900);
+  --bg-navbar: var(--color-slate-800);
+  --bg-dropdown: var(--color-slate-800);
   --bg-hover: #334155;
-  --bg-dropdown: #1e293b;
+  
+  /* Text */
+  --text: var(--color-gray-200);
   --text-main: #f1f5f9;
   --text-secondary: #94a3b8;
-  --text-inverted: #0f172a;
-  --text-link: #ced4da;
-  --text-link-hover: #ffffff;
+  --text-muted: var(--color-gray-500);
+  --text-inverted: var(--color-white);
+  --text-link: var(--color-gray-400);
+  --text-link-hover: var(--color-white);
+  --text-toggle: var(--color-gray-200);
 
-  --navbar-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  --card-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  --card-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
-
+  /* Borders */
+  --border: #22304a;
   --border-color: #334155;
-  --input-border: #334155;
+  --input-border: var(--color-success);
   --input-focus-border: #60a5fa;
 
-  /* Auth / Toggle Dark Mode */
-  --auth-bg: #1e293b; /* Matches surface color */
-  /* Darker/More subtle teal gradient for dark mode */
-  --gradient-toggle: linear-gradient(135deg, #0e5e6b 0%, #0f5c45 50%, #1f6460 100%);
-  --text-toggle: #e5e7eb;
-  /* Keeping green border for auth in dark mode as requested, maybe slightly adjusted if needed, but sticking to 'the green variable' logic */
-  /* Keeping green border for auth in dark mode as requested, maybe slightly adjusted if needed, but sticking to 'the green variable' logic */
+  /* Primary Brand */
+  --primary: var(--color-white);
+
+  /* Auth */
+  --auth-bg: var(--color-slate-800);
   --border-auth: var(--color-success);
-  
+
+  /* Icons */
   --icon-filter: brightness(0) invert(1);
+  
+  /* Gradients */
+  --gradient-toggle: linear-gradient(135deg, #0e5e6b 0%, #0f5c45 50%, #1f6460 100%);
 
-  /* Badges - Dark mode could be darker green or kept same */
+  /* Badges & Stars */
   --badge-bg: var(--color-brand-green);
-  --badge-text: #ffffff;
+  --badge-text: var(--color-white);
   --badge-border: 1px solid transparent;
+  --star-color: var(--color-gray-500);
 
-  /* Stars */
-  --star-color: #9ca3af;
-
-  /* Auth Buttons (Pink - kept consistent or slightly adjusted) */
-  --btn-auth-bg: #f8d7da;
-  --btn-auth-text: #000000;
+  /* Buttons: Primary (Pink) */
+  --btn-auth-bg: var(--color-warning-soft); /* Keep using soft warning for pink base */
+  --btn-auth-text: var(--color-black);
   --btn-auth-hover-bg: #f5c6cb;
   --btn-auth-shadow-color: rgba(248, 215, 218, 0.2);
 
+  /* Buttons: Secondary (White in Dark Mode) */
+  --btn-secondary-bg: var(--color-white);
+  --btn-secondary-text: var(--color-black);
+  --btn-secondary-hover-bg: var(--color-gray-200);
+  --btn-secondary-shadow-color: rgba(255, 255, 255, 0.1);
+
   /* Shadows */
+  --navbar-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  --card-shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
   --shadow-focus: 0 0 0 0.2rem rgba(0, 255, 98, 0.15);
 }
 

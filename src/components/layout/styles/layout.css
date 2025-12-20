@@ -1,9 +1,9 @@
-/* Contenedor principal de los formularios */
-.auth-container {
+/* General Card/Layout Container (was auth-container) */
+.layout-card {
     display: flex;
     background-color: var(--auth-bg);
     border-radius: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--shadow-xl);
     position: relative;
     overflow: hidden;
     width: 768px;
@@ -16,8 +16,8 @@
     z-index: 10;
 }
 
-/* Estilos para párrafos dentro del contenedor */
-.auth-container p {
+/* Paragraphs */
+.layout-card p {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -25,24 +25,22 @@
     color: var(--text-secondary);
 }
 
-/* Excluir mensajes de error de los estilos generales de párrafo */
-.auth-container .error-message {
-    margin: 0 !important;
-    margin-top: 2px !important;
-    margin-bottom: 0 !important;
+/* Error Messages Override */
+.layout-card .error-message {
+    margin: 2px 0 0 0 !important;
     font-size: 12px !important;
     line-height: 1.2 !important;
     letter-spacing: normal !important;
 }
 
-/* Estilos para los elementos span dentro del contenedor */
-.auth-container span {
+/* Spans */
+.layout-card span {
     font-size: 12px;
     color: var(--text-secondary);
 }
 
-/* Estilo para enlaces dentro del contenedor */
-.auth-container a {
+/* Links */
+.layout-card a {
     color: var(--text-link);
     font-size: 13px;
     text-decoration: none;
@@ -50,14 +48,14 @@
     transition: color 0.3s ease;
 }
 
-.auth-container a:hover {
-    color: #218838;
+.layout-card a:hover {
+    color: var(--color-success);
     text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .auth-container {
+    .layout-card {
         width: 100%;
         max-width: calc(100vw - 20px);
         max-height: calc(100vh - 20px);
@@ -67,7 +65,7 @@
 }
 
 @media (max-width: 768px) {
-    .auth-container {
+    .layout-card {
         width: 100%;
         max-width: calc(100vw - 20px);
         max-height: calc(100vh - 20px);
@@ -77,7 +75,7 @@
 }
 
 @media (max-width: 480px) {
-    .auth-container {
+    .layout-card {
         max-width: calc(100vw - 20px);
         max-height: calc(100vh - 20px);
         margin: 10px;
@@ -85,12 +83,10 @@
     }
 }
 
-/* Ajustes para zoom alto (140%+) */
 @media (min-resolution: 140dpi) {
-    .auth-container {
+    .layout-card {
         max-width: calc(100vw - 20px);
         max-height: calc(100vh - 20px);
         margin: 10px;
     }
 }
-

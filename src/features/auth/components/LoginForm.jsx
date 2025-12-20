@@ -29,7 +29,7 @@ const LoginForm = ({ formData, onChange, onSubmit, errors = {} }) => {
         />
         <a href="#" id="contra">¿Olvidaste tu contraseña?</a>
         {/*     <a href="#" id="return">Volver a la tienda</a> */}
-        <Button type="submit" variant="primary" className="auth-form-layout">
+        <Button type="submit" variant="primary">
           Iniciar sesión
         </Button>
       </form>
