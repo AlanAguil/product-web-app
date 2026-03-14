@@ -6,8 +6,8 @@ import {
   validateIsRequired,
   validateMaxLength,
   validateMinLength
-} from '../../../utils/general.functions';
-import { stringConstants } from '../../../utils/string.constants';
+} from '@/utils/general.functions';
+import { stringConstants } from '@/utils/string.constants';
 
 const loginRules = {
   email: [

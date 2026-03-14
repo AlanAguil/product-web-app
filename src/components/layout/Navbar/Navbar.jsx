@@ -5,7 +5,7 @@ import userIcon from '@/assets/ui/user.png';
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
 import Button from '@/components/ui/Button';
 import { useNavbar } from './useNavbar';
-import { categories } from '@/features/shop/mocks/categories';
+import { categories } from '@/modules/shop/mocks/categories';
 
 const Navbar = ({ onSearch }) => {
     const {

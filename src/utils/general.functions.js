@@ -70,3 +70,4 @@ export const validateFormRules = (formData, rules) => {
 
   return errors;
 };
+

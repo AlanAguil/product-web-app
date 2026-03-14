@@ -20,4 +20,4 @@ export const stringConstants = {
 };
 
 stringConstants.allRightsReserved =
-  `${getYear()} ${stringConstants.appName} | Todos los derechos reservados.`; 
+  `${getYear()} ${stringConstants.appName} - Todos los derechos reservados.`; 

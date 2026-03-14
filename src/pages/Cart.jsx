@@ -4,7 +4,7 @@ import {
     FreeShippingBar,
     OrderSummary,
     useCart
-} from '@/features/cart';
+} from '@/modules/cart';
 
 const Cart = () => {
     const {

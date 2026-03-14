@@ -109,7 +109,7 @@
 .search-input:focus {
     color: var(--text-main);
     background-color: var(--bg-input);
-    border-color: var(--color-brand-green);
+    border-color: var(--input-focus-border);
     outline: 0;
     box-shadow: var(--shadow-focus);
 }
