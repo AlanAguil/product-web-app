@@ -1,6 +1,6 @@
-import { User, UserResponseDto } from './entity/user.entity';
-import { CreateUserDto } from './models/create.user.dto';
-import { UpdateUserDto } from './models/update.user.dto';
+import type { User, UserResponseDto } from './entity/user.entity';
+import type { CreateUserDto } from './models/create.user.dto';
+import type { UpdateUserDto } from './models/update.user.dto';
 
 // Mapeador de API (DTO) -> Dominio (Entity)
 // "Lo que recibo del backend lo convierto en algo útil para mi app"
