@@ -1,5 +1,5 @@
 import axiosInstance from '@/api/config/axios.instance';
-import { User } from '../types/entity/user.entity';
+import type { User } from '../types/entity/user.entity';
 import * as userAdapter from '../types/user.adapter';
 
 export const UserService = {

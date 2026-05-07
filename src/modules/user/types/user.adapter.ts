@@ -1,6 +1,6 @@
-import { User, UserResponseDto } from './entity/user.entity';
-import { CreateUserDto } from './models/create.user.dto';
-import { UpdateUserDto } from './models/update.user.dto';
+import type { User, UserResponseDto } from './entity/user.entity';
+import type { CreateUserDto } from './models/create.user.dto';
+import type { UpdateUserDto } from './models/update.user.dto';
 
 // Mapeador de API (DTO) -> Dominio (Entity)
 // "Lo que recibo del backend lo convierto en algo útil para mi app"
@@ -10,6 +10,11 @@ export const toDomain = (dto: UserResponseDto): User => {
         // Aquí concatenamos como querías
         fullName: `${dto.firstName} ${dto.lastName}`,
         email: dto.email,
+        phoneNumber: dto.phoneNumber,
+        street: dto.street,
+        number: dto.number,
+        colony: dto.colony,
+        cp: dto.cp,
         // Lógica de negocio segura
         role: dto.roleType === 'admin' ? 'admin' : 'customer',
         // Manejo de nulos explícito y claro
@@ -34,6 +39,12 @@ export const toUpdateDto = (changes: Partial<User>): UpdateUserDto => {
 
     // Solo mapeamos lo que existe (Partial)
     if (changes.fullName) dto.name = changes.fullName;
+    if (changes.email) dto.email = changes.email;
+    if (changes.phoneNumber) dto.phoneNumber = changes.phoneNumber;
+    if (changes.street) dto.street = changes.street;
+    if (changes.number) dto.number = changes.number;
+    if (changes.colony) dto.colony = changes.colony;
+    if (changes.cp) dto.cp = changes.cp;
     if (changes.avatar) dto.profilePicture = changes.avatar;
 
     return dto;

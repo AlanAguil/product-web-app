@@ -1,12 +1,12 @@
 {
-  "name": "manos-mexicanas",
+  "name": "product-web-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "npm-i": "npm install",
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -16,24 +16,31 @@
     "@radix-ui/react-radio-group": "^1.3.8",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.4",
+    "@tanstack/react-query": "^5.99.2",
+    "@types/lodash": "^4.17.24",
     "axios": "^1.13.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
+    "lodash": "^4.18.1",
     "lucide-react": "^0.554.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-router-dom": "^6.30.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.36.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.22",
-    "globals": "^16.4.0",
-    "vite": "^5.4.11"
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vite": "^7.3.1"
   }
 }
